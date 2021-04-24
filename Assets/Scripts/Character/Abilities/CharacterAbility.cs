@@ -25,7 +25,7 @@ namespace LD48
         {
             _character = GetComponent<Character>();
             _controller = GetComponent<CharacterController2D>();
-            _inputManager = GetComponent<InputManager>();
+            _inputManager = _character.InputManager;
             _isInitialized = true;
         }
 
