@@ -78,7 +78,6 @@ namespace LD48
 
         public void ChangeMovementState(CharacterStates.MovementStates newState)
         {
-            Debug.Log($"{MovementState} => {newState}");
             MovementState = newState;
         }
         

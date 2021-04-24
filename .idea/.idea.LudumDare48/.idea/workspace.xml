@@ -20,17 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c259b42-60e9-4a14-adf6-67c255c4e9f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterDoubleJump.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterDoubleJump.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LudumDare48/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LudumDare48/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LudumDare48/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LudumDare48/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Character.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Character.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterAbility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterJump.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterJump.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController2D.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStates.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStates.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/InputManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,12 +49,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStates.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController2D.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterDoubleJump.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterAbility.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterJump.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterDoubleJump.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController2D.cs" />
       </list>
     </option>
   </component>
@@ -110,7 +100,7 @@
       <option name="presentableId" value="Default" />
       <updated>1619243754437</updated>
       <workItem from="1619243771569" duration="186000" />
-      <workItem from="1619243970620" duration="23776000" />
+      <workItem from="1619243970620" duration="24388000" />
     </task>
     <servers />
   </component>

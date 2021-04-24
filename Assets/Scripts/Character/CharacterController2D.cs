@@ -24,6 +24,8 @@ namespace LD48
         private Collider2D _groundTest;
         private Vector2 _targetVelocity = Vector2.zero;
         private Vector3 _velocity = Vector3.zero;
+        private float _x = 0f;
+        private float _y = 0f;
 
         private void Awake()
         {
@@ -72,8 +74,9 @@ namespace LD48
 
         private void FixedUpdate()
         {
-            
-            _targetVelocity = new Vector2(_targetVelocity.x, _targetVelocity.y); 
+            _x = Mathf.Clamp(_targetVelocity.x, -20, +20);
+            _y =  Mathf.Clamp(_targetVelocity.y, -50, +50);
+            _targetVelocity = new Vector2(_x, _y); 
             _rb.velocity = Vector3.SmoothDamp(_rb.velocity, _targetVelocity, ref _velocity, movementSmoothing);
         }
 
