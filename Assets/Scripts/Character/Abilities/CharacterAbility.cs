@@ -73,5 +73,10 @@ namespace LD48
         {
             
         }
+
+        public virtual void Flip()
+        {
+            
+        }
     }
 }

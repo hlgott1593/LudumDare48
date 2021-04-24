@@ -10,9 +10,9 @@ namespace LD48
         public InputManager InputManager => inputManager;
         [SerializeField] private InputManager inputManager;
         
-        public GameObject Model => model;
+        public SpriteRenderer Model => model;
 
-        [SerializeField] protected GameObject model;
+        [SerializeField] protected SpriteRenderer model;
         protected CharacterAbility[] _abilities;
 
         protected void Awake() => Initialize();
@@ -76,11 +76,24 @@ namespace LD48
                 }
             }
         }
+        
+        public void FlipAllAbilities()
+        {
+            foreach (var ability in _abilities)
+            {
+                if (ability.enabled && ability.IsInitialized)
+                {	
+                    ability.Flip();
+                }
+            }
+        }
 
         public void ChangeMovementState(CharacterStates.MovementStates newState)
         {
             MovementState = newState;
         }
+        
+        
         
         void OnGUI()
         {
@@ -89,5 +102,7 @@ namespace LD48
                 GUI.Label(new Rect(100, 140, 100, 100), $"MovementState {MovementState}");
             }
         }
+
+
     }
 }

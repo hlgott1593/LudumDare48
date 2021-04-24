@@ -20,10 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c259b42-60e9-4a14-adf6-67c255c4e9f8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterOrientation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterOrientation.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/forest_all_with_chars.aseprite.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/zombie_boy.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LudumDare48/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LudumDare48/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LudumDare48/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LudumDare48/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Character.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Character.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/MovingPlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/MovingPlatform.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterAbility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/main_boy-export.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/main_boy-export.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/main_boy.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/main_boy.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/main_boy_animations-Sheet.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/main_boy_animations-Sheet.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,16 +60,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterAbility.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStates.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterJump.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterDoubleJump.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterAbility.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AI/PatrolWaypoints.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AI/MovingPlatform.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController2D.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterAbility.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterOrientation.cs" />
       </list>
     </option>
   </component>
@@ -106,7 +116,7 @@
       <option name="presentableId" value="Default" />
       <updated>1619243754437</updated>
       <workItem from="1619243771569" duration="186000" />
-      <workItem from="1619243970620" duration="30966000" />
+      <workItem from="1619243970620" duration="32856000" />
     </task>
     <servers />
   </component>
