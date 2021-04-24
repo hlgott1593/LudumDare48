@@ -63,6 +63,11 @@ namespace LD48
         {
 			
         }
+        
+        public virtual void LateProcessAbility()
+        {
+			
+        }
 
         public virtual void UpdateAnimator()
         {

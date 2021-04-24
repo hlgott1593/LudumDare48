@@ -8,6 +8,7 @@
           <e p="Character" t="Include">
             <e p="Abilities" t="Include">
               <e p="CharacterAbility.cs" t="Include" />
+              <e p="CharacterDoubleJump.cs" t="Include" />
               <e p="CharacterJump.cs" t="Include" />
               <e p="CharacterMovement.cs" t="Include" />
             </e>

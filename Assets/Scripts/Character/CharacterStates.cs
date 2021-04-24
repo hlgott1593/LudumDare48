@@ -11,7 +11,6 @@
         
         public enum MovementStates 
         {
-            Null,
             Idle,
             Falling,
             Running,

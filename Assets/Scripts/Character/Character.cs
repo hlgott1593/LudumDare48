@@ -27,6 +27,7 @@ namespace LD48
         {
             HandleInput();
             ProcessAbilities();
+            LateProcessAbilities();
             UpdateAnimators();
         }
         
@@ -51,6 +52,17 @@ namespace LD48
                 }
             }
         }
+        
+        protected virtual void LateProcessAbilities()
+        {
+            foreach (var ability in _abilities)
+            {
+                if (ability.enabled && ability.IsInitialized)
+                {
+                    ability.LateProcessAbility();
+                }
+            }
+        }
 
         
         protected virtual void UpdateAnimators()
@@ -66,7 +78,16 @@ namespace LD48
 
         public void ChangeMovementState(CharacterStates.MovementStates newState)
         {
+            Debug.Log($"{MovementState} => {newState}");
             MovementState = newState;
+        }
+        
+        void OnGUI()
+        {
+            if (Application.isEditor)
+            {
+                GUI.Label(new Rect(100, 140, 100, 100), $"MovementState {MovementState}");
+            }
         }
     }
 }

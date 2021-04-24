@@ -76,5 +76,13 @@ namespace LD48
             _targetVelocity = new Vector2(_targetVelocity.x, _targetVelocity.y); 
             _rb.velocity = Vector3.SmoothDamp(_rb.velocity, _targetVelocity, ref _velocity, movementSmoothing);
         }
+
+        void OnGUI()
+        {
+            if (Application.isEditor)
+            {
+                GUI.Label(new Rect(100, 100, 100, 100), $"Grounded {Grounded}");
+            }
+        }
     }
 }
