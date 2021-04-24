@@ -1,17 +1,20 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace LD48
 {
     public class CharacterDoubleJump : CharacterJump
     {
 
-        [SerializeField] protected int ExtraJumpCount = 1;
+        [SerializeField] protected int extraJumpCount = 1;
+        [SerializeField] protected bool ignoreYVelocity = true;
+        [SerializeField] protected float yVelocityGreaterThan = -1f;
         protected int currentJumpCount;
 
         protected override void Initialize()
         {
             base.Initialize();
-            currentJumpCount = ExtraJumpCount;
+            currentJumpCount = extraJumpCount;
         }
 
         protected bool HasJumpRemaining()
@@ -21,7 +24,7 @@ namespace LD48
         
         protected override bool CheckJumpStartConditions()
         {
-            return !_controller.Grounded && _character.MovementState != CharacterStates.MovementStates.Jumping && HasJumpRemaining();
+            return !_controller.Grounded && _character.MovementState != CharacterStates.MovementStates.Jumping && HasJumpRemaining() && (ignoreYVelocity || _controller.Velocity.y >= yVelocityGreaterThan);
         }
 
         protected override bool CheckIsJumping()
@@ -43,7 +46,7 @@ namespace LD48
         
         public override void ProcessAbility()
         {
-            if (_controller.Grounded) currentJumpCount = ExtraJumpCount;
+            if (_controller.Grounded) currentJumpCount = extraJumpCount;
             base.ProcessAbility();
         }
         
