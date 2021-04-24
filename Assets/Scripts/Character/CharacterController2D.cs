@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace LD48
@@ -15,7 +17,7 @@ namespace LD48
         
         [Header("Ground")]
         [SerializeField] private LayerMask groundLayerMask;
-        [SerializeField] private Transform groundCheckPosition;
+        [SerializeField] private List<Transform> groundCheckPositions = new List<Transform>();
         
         
         private Rigidbody2D _rb;
@@ -35,8 +37,12 @@ namespace LD48
         
         private void GroundCheck()
         {
-            _groundTest = Physics2D.OverlapPoint((Vector2)groundCheckPosition.position, groundLayerMask);
-            Grounded = (_groundTest != null);
+            var isGrounded = groundCheckPositions.Any(groundCheckPosition =>
+            {
+                _groundTest = Physics2D.OverlapPoint((Vector2) groundCheckPosition.position, groundLayerMask);
+                return _groundTest != null;
+            });
+            Grounded = isGrounded;
         }
 
         public void SetTargetVelocityX(float newXVelocity)
