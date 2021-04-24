@@ -9,6 +9,7 @@ namespace LD48
     public class CharacterController2D : MonoBehaviour
     {
         public bool Grounded { get; private set; }
+        public bool OnMovingPlatform { get; private set; }
         public Vector2 Velocity => _rb.velocity;
         public Vector2 TargetVelocity => _targetVelocity;
         
@@ -22,6 +23,7 @@ namespace LD48
         
         private Rigidbody2D _rb;
         private Collider2D _groundTest;
+        private MovingPlatform _platform;
         private Vector2 _targetVelocity = Vector2.zero;
         private Vector3 _velocity = Vector3.zero;
         private float _x = 0f;
@@ -39,12 +41,32 @@ namespace LD48
         
         private void GroundCheck()
         {
-            var isGrounded = groundCheckPositions.Any(groundCheckPosition =>
+
+            MovingPlatform platform = null;
+            var isOnMovingPlatform = false;
+            var isGrounded = false;
+
+            foreach (var checkPosition in groundCheckPositions)
             {
-                _groundTest = Physics2D.OverlapPoint((Vector2) groundCheckPosition.position, groundLayerMask);
-                return _groundTest != null;
-            });
+                _groundTest = Physics2D.OverlapPoint((Vector2) checkPosition.position, groundLayerMask);
+                isGrounded = isGrounded || _groundTest != null;
+                if (_groundTest != null)
+                {
+                    isOnMovingPlatform = isOnMovingPlatform || _groundTest.TryGetComponent(out platform);
+                }
+            }
+
+            if (isOnMovingPlatform)
+            {
+                _platform = platform;
+            }
+            else
+            {
+                _platform = null;
+            }
+
             Grounded = isGrounded;
+            OnMovingPlatform = isOnMovingPlatform;
         }
 
         public void SetTargetVelocityX(float newXVelocity)
@@ -76,7 +98,13 @@ namespace LD48
         {
             _x = Mathf.Clamp(_targetVelocity.x, -20, +20);
             _y =  Mathf.Clamp(_targetVelocity.y, -50, +50);
-            _targetVelocity = new Vector2(_x, _y); 
+            _targetVelocity = new Vector2(_x, _y);
+
+            if (_platform)
+            {
+                _targetVelocity += _platform.MovementSpeed * _platform.MovementDirection;
+            }
+            
             _rb.velocity = Vector3.SmoothDamp(_rb.velocity, _targetVelocity, ref _velocity, movementSmoothing);
         }
 
