@@ -6,7 +6,8 @@ namespace LD48
     {
         [SerializeField] private float movementSpeed = 10f;
         [SerializeField] private float airMovementSpeed = 4f;
-        [SerializeField] private float idleThreshold = 0.01f;
+        [SerializeField] private float idleThreshold = 0.1f;
+        [SerializeField] private float fallingGravityMultiplier = 2f;
         
         private Vector2 _movement = Vector2.zero;
 
@@ -31,13 +32,27 @@ namespace LD48
 
         private void SetMovement()
         {
+            var xVelocity = 0f;
+            var fallVelocityBoost = 0f;
+            
             if (!_controller.Grounded)
             {
-                _controller.SetTargetVelocityX(_movement.x * airMovementSpeed);
-                return;
+                xVelocity = _movement.x * airMovementSpeed;
+            }
+            else
+            {
+                xVelocity = _movement.x * movementSpeed;
+                _controller.SetTargetVelocityY(0);
             }
 
-            _controller.SetTargetVelocityX(_movement.x * movementSpeed);
+            if (_character.MovementState == CharacterStates.MovementStates.Falling)
+            {
+                fallVelocityBoost = (Physics2D.gravity * (Time.deltaTime * fallingGravityMultiplier)).y;
+            }
+
+            _controller.SetTargetVelocityX(xVelocity);
+            _controller.AddTargetVelocityY(fallVelocityBoost);
+            
         }
 
         private void HandleMovementState()

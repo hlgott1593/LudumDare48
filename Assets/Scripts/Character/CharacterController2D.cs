@@ -7,7 +7,7 @@ namespace LD48
     public class CharacterController2D : MonoBehaviour
     {
         public bool Grounded { get; private set; }
-        public Vector3 Velocity => _velocity;
+        public Vector2 Velocity => _rb.velocity;
         public Vector2 TargetVelocity => _targetVelocity;
         
         [Header("Movement")]
@@ -48,6 +48,16 @@ namespace LD48
         {
             _targetVelocity.x += velocityChange;
         }
+        
+        public void SetTargetVelocityY(float newXVelocity)
+        {
+            _targetVelocity.y = newXVelocity;
+        }
+
+        public void AddTargetVelocityY(float velocityChange)
+        {
+            _targetVelocity.y += velocityChange;
+        }
 
         public void AddForce(Vector2 force)
         {
@@ -57,7 +67,7 @@ namespace LD48
         private void FixedUpdate()
         {
             
-            _targetVelocity = new Vector2(_targetVelocity.x, _rb.velocity.y); 
+            _targetVelocity = new Vector2(_targetVelocity.x, _targetVelocity.y); 
             _rb.velocity = Vector3.SmoothDamp(_rb.velocity, _targetVelocity, ref _velocity, movementSmoothing);
         }
     }

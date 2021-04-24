@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 488981176}
   - component: {fileID: 488981179}
   - component: {fileID: 488981175}
+  - component: {fileID: 488981181}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -286,6 +287,9 @@ MonoBehaviour:
   blockedMovementStates: 
   IsUnlocked: 1
   movementSpeed: 10
+  airMovementSpeed: 6
+  idleThreshold: 0.01
+  fallingGravityMultiplier: 8
 --- !u!114 &488981176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +415,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &488981181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488981173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe5f97c00d85426a9e9c1ecf0009bdd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockedConditionStates: 
+  blockedMovementStates: 
+  IsUnlocked: 1
+  jumpDuration: 0.2
+  jumpVelocity: 20
 --- !u!1 &505053047
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +485,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

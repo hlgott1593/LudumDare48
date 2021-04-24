@@ -6,10 +6,13 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Character" t="Include">
+            <e p="Abilities" t="Include">
+              <e p="CharacterAbility.cs" t="Include" />
+              <e p="CharacterJump.cs" t="Include" />
+              <e p="CharacterMovement.cs" t="Include" />
+            </e>
             <e p="Character.cs" t="Include" />
-            <e p="CharacterAbility.cs" t="Include" />
             <e p="CharacterController2D.cs" t="Include" />
-            <e p="CharacterMovement.cs" t="Include" />
             <e p="CharacterStates.cs" t="Include" />
             <e p="InputActions" t="Include">
               <e p="CharacterActions.cs" t="Include" />

@@ -7,12 +7,12 @@ namespace LD48
     public class InputManager : MonoBehaviour
     {
         public Vector2 Movement { get; protected set; }
-        public bool JumpStart { get; protected set; }
+        public bool JumpPerformed { get; protected set; }
         public bool JumpEnd { get; protected set; }
 
         public void OnJump(InputAction.CallbackContext ctx)
         {
-            JumpStart = ctx.started;
+            JumpPerformed = ctx.performed;
             JumpEnd = ctx.canceled;
         }
 
