@@ -20,6 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c259b42-60e9-4a14-adf6-67c255c4e9f8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LudumDare48/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LudumDare48/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Character.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Character.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/MovingPlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/MovingPlatform.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController2D.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +35,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://D:/projects/games/TanTan/Assets/TopDownEngine/Common/Scripts/Characters/Core/CharacterStates.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/MovingPlatform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/projects/games/TanTan/Assets/TopDownEngine/Common/Scripts/Characters/CharacterAbilities/CharacterMovement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/InputActions/CharacterActions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.2/InputSystem/Actions/InputAction.cs" root0="SKIP_HIGHLIGHTING" />
@@ -49,11 +53,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterStates.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterJump.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterDoubleJump.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterAbility.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/InputManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterJump.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Character/Abilities/CharacterDoubleJump.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AI/PatrolWaypoints.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AI/MovingPlatform.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterController2D.cs" />
       </list>
     </option>
@@ -100,7 +106,7 @@
       <option name="presentableId" value="Default" />
       <updated>1619243754437</updated>
       <workItem from="1619243771569" duration="186000" />
-      <workItem from="1619243970620" duration="24388000" />
+      <workItem from="1619243970620" duration="30966000" />
     </task>
     <servers />
   </component>

@@ -3,11 +3,12 @@ using UnityEngine;
 
 namespace LD48
 {
-    [RequireComponent(typeof(InputManager))]
     public class Character : MonoBehaviour
     {
         public CharacterStates.MovementStates MovementState { get; protected set; }
         public CharacterStates.CharacterConditions Condition { get; protected set; }
+        public InputManager InputManager => inputManager;
+        [SerializeField] private InputManager inputManager;
         
         public GameObject Model => model;
 
