@@ -7,7 +7,20 @@
         <e p="Scripts" t="Include">
           <e p="Character" t="Include">
             <e p="Character.cs" t="Include" />
-            <e p="CharacterController.cs" t="Include" />
+            <e p="CharacterAbility.cs" t="Include" />
+            <e p="CharacterController2D.cs" t="Include" />
+            <e p="CharacterMovement.cs" t="Include" />
+            <e p="CharacterStates.cs" t="Include" />
+            <e p="InputActions" t="Include">
+              <e p="CharacterActions.cs" t="Include" />
+            </e>
+            <e p="InputManager.cs" t="Include" />
+          </e>
+          <e p="Controllers" t="Include">
+            <e p="PlayerController.cs" t="Include" />
+          </e>
+          <e p="Input" t="Include">
+            <e p="InputControls.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
             <e p="TItleUI.cs" t="Include" />
