@@ -10,6 +10,7 @@ namespace LD48
         public float MovementSpeed => movementSpeed;
         
         [SerializeField] protected float movementSpeed = 1f;
+        [SerializeField] protected float slowRegion = 2f;
         [SerializeField] protected float reachedWaypointThreshold = 0.1f;
         [SerializeField] protected List<Transform> waypoints = new List<Transform>();
         
@@ -70,9 +71,16 @@ namespace LD48
             {
                 currentTarget = GetNextTarget();
             }
+
+
+            var speed = movementSpeed;
+            if (_towards.sqrMagnitude <= slowRegion)
+            {
+                speed *= _towards.sqrMagnitude / slowRegion;
+            }
             
     
-            var movement = (movementSpeed * Time.fixedDeltaTime * _direction);
+            var movement = (speed * Time.fixedDeltaTime * _direction);
 
             if (movement.sqrMagnitude > _towards.sqrMagnitude)
             {

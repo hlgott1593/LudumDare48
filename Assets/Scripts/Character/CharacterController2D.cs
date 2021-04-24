@@ -15,6 +15,7 @@ namespace LD48
         
         [Header("Movement")]
         [Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;
+        [Range(0, .3f)] [SerializeField] private float movementSmoothingOnPlatform = 0f;
         
         [Header("Ground")]
         [SerializeField] private LayerMask groundLayerMask;
@@ -28,7 +29,8 @@ namespace LD48
         private Vector3 _velocity = Vector3.zero;
         private float _x = 0f;
         private float _y = 0f;
-
+        private Vector2 _platformVelocity = Vector2.zero;
+        
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -105,7 +107,7 @@ namespace LD48
                 _targetVelocity += _platform.MovementSpeed * _platform.MovementDirection;
             }
             
-            _rb.velocity = Vector3.SmoothDamp(_rb.velocity, _targetVelocity, ref _velocity, movementSmoothing);
+            _rb.velocity = Vector3.SmoothDamp(_rb.velocity, _targetVelocity, ref _velocity, _platform ? movementSmoothingOnPlatform : movementSmoothing);
         }
 
         void OnGUI()
