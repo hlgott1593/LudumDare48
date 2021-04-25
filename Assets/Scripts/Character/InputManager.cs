@@ -18,13 +18,5 @@ namespace LD48
         {
             Movement = ctx.ReadValue<Vector2>();
         }
-        
-        void OnGUI()
-        {
-            if (Application.isEditor)
-            {
-                GUI.Label(new Rect(100, 120, 100, 100), $"JumpStart {Jump}");
-            }
-        }
     }
 }

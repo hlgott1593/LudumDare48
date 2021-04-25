@@ -66,7 +66,6 @@ namespace LD48
             if (!CheckJumpStartConditions()) return;
             _jumpStartedAt = Time.time;
             _jumping = true;
-            _controller.SetTargetVelocityY(0);
             SetJumpState();
         }
 

@@ -155,7 +155,7 @@ namespace LD48
         {
             if (Application.isEditor)
             {
-                GUI.Label(new Rect(100, 140, 100, 100), $"MovementState {MovementState}");
+                GUI.Label(new Rect(50, 140, 150, 100), $"MovementState {MovementState}");
             }
         }
 

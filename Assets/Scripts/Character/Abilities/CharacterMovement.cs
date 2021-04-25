@@ -21,6 +21,9 @@ namespace LD48
             {
                 _movement = Vector2.zero;
             }
+            
+            //_controller.SetTargetVelocityX(0);
+            //_controller.SetTargetVelocityY(0);
         }
 
         public override void ProcessAbility()
@@ -30,16 +33,10 @@ namespace LD48
             SetMovement();
         }
 
-        public override void LateProcessAbility()
-        {
-            base.LateProcessAbility();
-        }
-
         private void SetMovement()
         {
+            // Horizontal
             var xVelocity = 0f;
-            var fallVelocityBoost = 0f;
-            
             if (!_controller.Grounded)
             {
                 xVelocity = _movement.x * airMovementSpeed;
@@ -48,16 +45,28 @@ namespace LD48
             {
                 xVelocity = _movement.x * movementSpeed;
             }
-
+            _controller.SetTargetVelocityX(xVelocity);
+            
+            // Falling
+            var fallVelocityBoost = 0f;
             if (_character.MovementState == CharacterStates.MovementStates.Falling)
             {
                 fallVelocityBoost = (Physics2D.gravity * (Time.deltaTime * fallingGravityMultiplier)).y;
             }
-
-            _controller.SetTargetVelocityX(xVelocity);
             _controller.AddTargetVelocityY(fallVelocityBoost);
-            if (_controller.Grounded) _controller.SetVelocityY(0);
+
+            // Bump into ceiling
+            if (!_controller.Grounded && _controller.Ceiling)
+            { 
+                _controller.SetTargetVelocityY((Physics2D.gravity * Time.fixedDeltaTime).y);
+                _controller.SetVelocityY((Physics2D.gravity * Time.fixedDeltaTime).y);
+            }
             
+            // Grounded
+            if (_controller.Grounded)
+            {
+                _controller.SetTargetVelocityY(0);
+            }
         }
 
         private void HandleMovementState()
