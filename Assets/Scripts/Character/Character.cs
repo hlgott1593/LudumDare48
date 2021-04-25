@@ -1,10 +1,13 @@
 ﻿using System;
+using LD48.Health;
 using UnityEngine;
 
 namespace LD48
 {
-    public class Character : MonoBehaviour
-    {
+    public class Character : MonoBehaviour, IDamagable {
+
+        public HealthSystem HealthSystem { get; private set; }
+        public GameObject Behaviour => gameObject;
         public CharacterStates.MovementStates MovementState { get; protected set; }
         public CharacterStates.CharacterConditions Condition { get; protected set; }
         public InputManager InputManager => inputManager;
@@ -20,13 +23,20 @@ namespace LD48
 
         protected void Awake() => Initialize();
 
-        protected void Initialize()
-        {
+        protected void Initialize() {
+            HealthSystem = new HealthSystem(this, new HealthConfig(3, false));
             Condition = CharacterStates.CharacterConditions.Normal;
             MovementState = CharacterStates.MovementStates.Idle;
             _abilities = GetComponents<CharacterAbility>();
         }
 
+        public void OnHealthChanged(float prevAmount) {
+            Debug.Log(HealthSystem.CurrentHp);
+        }
+
+        public void OnDeath() {
+            Destroy(gameObject.transform.root.gameObject);
+        }
         protected void Update()
         {
             HandleInput();
