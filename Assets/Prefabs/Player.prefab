@@ -131,9 +131,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 3018292956233855717}
     m_Modifications:
     - target: {fileID: 6975499140764496052, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: _spiritLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496052, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 3018292956233855716}
+    - target: {fileID: 6975499140764496052, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: _corporealLayer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6975499140764496057, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: m_Name
       value: Shaman

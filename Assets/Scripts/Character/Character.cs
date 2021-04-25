@@ -40,6 +40,7 @@ namespace LD48
             MovementState = CharacterStates.MovementStates.Idle;
             _abilities = GetComponents<CharacterAbility>();
         }
+       
         public void OnHealthChanged(float prevAmount) { }
 
         public void OnDeath() {
