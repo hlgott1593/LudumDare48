@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
-  - YENEMY
-  - 
-  - 
+  - CorporealWorld_Player
+  - SpiritWorld_Player
+  - CorporealWorld_Enemy
+  - SpiritWorld_Enemy
   - 
   - 
   - 
