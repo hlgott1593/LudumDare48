@@ -12,6 +12,10 @@ namespace LD48
 
         public static Action GhostFormEntered = delegate { };
         public static Action CorporealFormEntered = delegate { };
+        
+        [SerializeField] public LayerMask ghostCollisionLayer;
+        [SerializeField] public LayerMask corporealCollisionlayer;
+        
         public HealthSystem HealthSystem { get; private set; }
         public GameObject Behaviour => gameObject;
         public CharacterStates.MovementStates MovementState { get; protected set; }
@@ -40,6 +44,7 @@ namespace LD48
 
         private void Start() {
             CorporealFormEntered();
+            _controller.groundLayerMask = corporealCollisionlayer;
 
             CheckpointManager.Instance.OnCheckpointLoaded += OnCheckpointLoaded;
             CheckpointManager.Instance.OnCheckpointChanged += OnCheckpointChanged;
@@ -168,10 +173,12 @@ namespace LD48
                 GhostFormEntered();
                 gameObject.layer = _spiritLayer;
                 gameObject.AssignChildLayers();
+                _controller.groundLayerMask = ghostCollisionLayer;
             }
             else {
                 CorporealFormEntered();
-                gameObject.layer = _corporealLayer;                
+                gameObject.layer = _corporealLayer;  
+                _controller.groundLayerMask = corporealCollisionlayer;
                 gameObject.AssignChildLayers();
             }
         }

@@ -20,7 +20,7 @@ namespace LD48
         [Range(0, .3f)] [SerializeField] private float movementSmoothingOnPlatform = 0f;
         
         [Header("Ground")]
-        [SerializeField] private LayerMask groundLayerMask;
+        [SerializeField] public LayerMask groundLayerMask;
         [SerializeField] private List<Transform> groundCheckPositions = new List<Transform>();
         [SerializeField] private List<Transform> ceilingCheckPositions = new List<Transform>();
         
