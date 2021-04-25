@@ -57,7 +57,17 @@ namespace LD48
             }
             return waypoints[currentTargetIndex];
         }
-        
+
+        public Vector2 Movement()
+        {
+            var speed = movementSpeed;
+            if (_towards.sqrMagnitude <= slowRegion)
+            {
+                speed *= _towards.sqrMagnitude / slowRegion;
+            }
+            return (speed * Time.fixedDeltaTime * _direction);
+        }
+
         private void FixedUpdate()
         {
             if (currentTarget == null)
@@ -72,16 +82,7 @@ namespace LD48
                 currentTarget = GetNextTarget();
             }
 
-
-            var speed = movementSpeed;
-            if (_towards.sqrMagnitude <= slowRegion)
-            {
-                speed *= _towards.sqrMagnitude / slowRegion;
-            }
-            
-    
-            var movement = (speed * Time.fixedDeltaTime * _direction);
-
+            var movement = Movement();
             if (movement.sqrMagnitude > _towards.sqrMagnitude)
             {
                 movement = _towards;

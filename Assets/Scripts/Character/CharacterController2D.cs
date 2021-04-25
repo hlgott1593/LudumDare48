@@ -120,9 +120,11 @@ namespace LD48
             _y =  Mathf.Clamp(_targetVelocity.y, -50, +50);
             _targetVelocity = new Vector2(_x, _y);
 
+            _targetVelocity += Physics2D.gravity * Time.fixedDeltaTime; 
+            
             if (_platform)
             {
-                _targetVelocity += _platform.MovementSpeed * _platform.MovementDirection;
+                _targetVelocity += _platform.Movement() * 1/Time.fixedDeltaTime;
             }
             
             _rb.velocity = Vector3.SmoothDamp(_rb.velocity, _targetVelocity, ref _velocity, _platform ? movementSmoothingOnPlatform : movementSmoothing);
