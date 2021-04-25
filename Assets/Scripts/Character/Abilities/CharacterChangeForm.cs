@@ -12,6 +12,7 @@ namespace LD48
         public override void HandleInput()
         {
             base.HandleInput();
+            if (!IsAuthorized()) return;
             if (PressedThisFrame())
             {
                 _change = true;

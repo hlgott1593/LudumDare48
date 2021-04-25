@@ -86,6 +86,14 @@ namespace LD48
             Ceiling = isCeiling;
         }
 
+        public void ZeroVelocities()
+        {
+            SetTargetVelocityX(0);
+            SetTargetVelocityY(0);
+            SetVelocityX(0);
+            SetVelocityY(0);
+        }
+
         public void SetTargetVelocityX(float newXVelocity)
         {
             _targetVelocity.x = newXVelocity;
@@ -94,6 +102,11 @@ namespace LD48
         public void AddTargetVelocityX(float velocityChange)
         {
             _targetVelocity.x += velocityChange;
+        }
+
+        public void SetVelocityX(float newX)
+        {
+            _rb.velocity = new Vector2(newX, _rb.velocity.y);
         }
         
         public void SetVelocityY(float newY)

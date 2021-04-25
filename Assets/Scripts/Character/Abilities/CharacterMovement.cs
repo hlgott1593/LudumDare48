@@ -89,13 +89,13 @@ namespace LD48
             }
             
             //
-            if (_controller.Grounded && (Mathf.Abs(_inputManager.Movement.x) > idleThreshold) &&
+            if (_controller.Grounded && (Mathf.Abs(_movement.x) > idleThreshold) &&
                 (_character.MovementState == CharacterStates.MovementStates.Idle))
             {
                 _character.ChangeMovementState(CharacterStates.MovementStates.Running);	
             }
             
-            if (_controller.Grounded && (Mathf.Abs(_inputManager.Movement.x) <= idleThreshold) &&
+            if (_controller.Grounded && (Mathf.Abs(_movement.x) <= idleThreshold) &&
                 (_character.MovementState == CharacterStates.MovementStates.Running))
             {
                 _character.ChangeMovementState(CharacterStates.MovementStates.Idle);	

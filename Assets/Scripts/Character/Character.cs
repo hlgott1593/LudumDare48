@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Collections;
+using DG.Tweening;
 using LD48.Health;
 using SuperTiled2Unity.Editor;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace LD48
 {
-    public class Character : MonoBehaviour, IDamagable {
+    public class Character : MonoBehaviour, IDamagable, ICheckpointUpdater {
 
         public static Action GhostFormEntered = delegate { };
         public static Action CorporealFormEntered = delegate { };
@@ -24,27 +27,68 @@ namespace LD48
 
         [SerializeField] protected SpriteRenderer model;
         protected CharacterAbility[] _abilities;
+        protected CharacterController2D _controller;
         [SerializeField] private bool _renderGUI;
         [SerializeField] private int _spiritLayer;
         [SerializeField] private int _corporealLayer;
 
+        [SerializeField] private float RespawnDelay = 0.5f;
+        
+        private float checkpointHp = 3;
+        
         protected void Awake() => Initialize();
 
         private void Start() {
             CorporealFormEntered();
+
+            CheckpointManager.Instance.OnCheckpointLoaded += OnCheckpointLoaded;
+            CheckpointManager.Instance.OnCheckpointChanged += OnCheckpointChanged;
         }
+
+        public void OnCheckpointChanged(Checkpoint checkpoint)
+        {
+            checkpointHp = HealthSystem.CurrentHp;
+        }
+
+        public void OnCheckpointLoaded(Checkpoint checkpoint)
+        {
+            StartCoroutine(Respawn(checkpoint.SpawnPoint.position));
+        }
+
+        IEnumerator Respawn(Vector3 position)
+        {
+            MovementState = CharacterStates.MovementStates.Idle;
+            
+            // Not sure why it is not resetting on its own???
+            animator?.SetBool("Idle", true);
+            animator?.SetBool("Running", false);
+            animator?.SetBool("Jumping", false);
+            animator?.SetBool("Falling", false);
+            animator?.SetBool("Dashing", false);
+            
+            Condition = CharacterStates.CharacterConditions.Dead;
+            DOTween.Sequence().Append(DOTweenModuleSprite.DOFade(Model, 0, 0));
+            transform.position = position;
+            _controller.ZeroVelocities();
+            DOTween.Sequence().Append(DOTweenModuleSprite.DOFade(Model, 1, RespawnDelay));
+            yield return new WaitForSeconds(RespawnDelay);
+            Condition = CharacterStates.CharacterConditions.Normal;            
+        }
+        
 
         protected void Initialize() {
             HealthSystem = new HealthSystem(this, new HealthConfig(3, false));
             Condition = CharacterStates.CharacterConditions.Normal;
             MovementState = CharacterStates.MovementStates.Idle;
             _abilities = GetComponents<CharacterAbility>();
+            _controller = GetComponent<CharacterController2D>();
         }
        
         public void OnHealthChanged(float prevAmount) { }
 
         public void OnDeath() {
-            Destroy(gameObject.transform.root.gameObject);
+            CheckpointManager.Instance.LoadLastCheckpoint();
+            Condition = CharacterStates.CharacterConditions.Dead;
         }
         
         protected void Update()
@@ -141,6 +185,7 @@ namespace LD48
                 animator?.SetBool("Running", false);
                 animator?.SetBool("Jumping", false);
                 animator?.SetBool("Falling", false);
+                animator?.SetBool("Dashing", false);
             }
             if (MovementState == CharacterStates.MovementStates.Falling)
             {
@@ -148,6 +193,7 @@ namespace LD48
                 animator?.SetBool("Running", false);
                 animator?.SetBool("Jumping", false);
                 animator?.SetBool("Falling", true);
+                animator?.SetBool("Dashing", false);
             }
             
             if (MovementState == CharacterStates.MovementStates.Jumping)
@@ -156,6 +202,7 @@ namespace LD48
                 animator?.SetBool("Running", false);
                 animator?.SetBool("Jumping", true);
                 animator?.SetBool("Falling", false);
+                animator?.SetBool("Dashing", false);
             }
             
             if (MovementState == CharacterStates.MovementStates.DoubleJumping)
@@ -164,6 +211,7 @@ namespace LD48
                 animator?.SetBool("Running", false);
                 animator?.SetBool("Jumping", true);
                 animator?.SetBool("Falling", false);
+                animator?.SetBool("Dashing", false);
             }
             
             if (MovementState == CharacterStates.MovementStates.Running)
@@ -172,17 +220,18 @@ namespace LD48
                 animator?.SetBool("Running", true);
                 animator?.SetBool("Jumping", false);
                 animator?.SetBool("Falling", false);
+                animator?.SetBool("Dashing", false);
             }
             
+            
         }
-        
-        
-        
+
         void OnGUI()
         {
             if (Application.isEditor && _renderGUI)
             {
                 GUI.Label(new Rect(50, 200, 150, 100), $"Form {Form}");
+                GUI.Label(new Rect(50, 300, 150, 100), $"Condition {Condition}");
                 GUI.Label(new Rect(50, 140, 150, 100), $"MovementState {MovementState}");
             }
         }
