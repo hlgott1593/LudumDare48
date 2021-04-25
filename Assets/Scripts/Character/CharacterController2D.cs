@@ -130,7 +130,9 @@ namespace LD48
                 _targetVelocity += _platformVelocity;
             }
             
-            _rb.velocity = Vector3.SmoothDamp(_rb.velocity, _targetVelocity, ref _velocity, _platform ? movementSmoothingOnPlatform : movementSmoothing);
+
+            //_rb.velocity = Vector3.SmoothDamp(_rb.velocity, _targetVelocity, ref _velocity, _platform ? movementSmoothingOnPlatform : movementSmoothing);
+            _rb.velocity = _targetVelocity;
         }
 
         void OnGUI()
