@@ -6,6 +6,8 @@ namespace LD48
 {
     public class Character : MonoBehaviour, IDamagable {
 
+        public static Action GhostFormEntered = delegate { };
+        public static Action CorporealFormEntered = delegate { };
         public HealthSystem HealthSystem { get; private set; }
         public GameObject Behaviour => gameObject;
         public CharacterStates.MovementStates MovementState { get; protected set; }
@@ -109,6 +111,8 @@ namespace LD48
         public void ChangeForm(CharacterStates.Form newForm)
         {
             Form = newForm;
+            if (Form == CharacterStates.Form.Ghost) Character.GhostFormEntered();
+            else Character.CorporealFormEntered();
         }
 
         protected void UpdateAnimator()
