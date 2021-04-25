@@ -149,6 +149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PointLight
       objectReference: {fileID: 0}
+    - target: {fileID: 6975499140106647706, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 49da5e82a73f56a4e9514364ed1e09ba, type: 2}
     - target: {fileID: 6975499140764496050, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -242,12 +246,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8986076590870396598, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: m_Intensity
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986076590870396598, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: m_LightType
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8986076590870396598, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: m_FalloffIntensity
-      value: 0.393
+      value: 0.457
       objectReference: {fileID: 0}
     - target: {fileID: 8986076590870396598, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: m_PointLightInnerRadius
@@ -259,7 +267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986076590870396598, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8986076590870396598, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[8]
