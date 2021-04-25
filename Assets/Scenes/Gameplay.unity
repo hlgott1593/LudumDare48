@@ -606,58 +606,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5283377359066520869, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
-      propertyPath: screenCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5283377359088478838, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
-      propertyPath: screenCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5283377359088478838, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
-      propertyPath: parallaxScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5283377359088478839, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 5283377359093152212, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
-      propertyPath: screenCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5283377359362519178, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
-      propertyPath: screenCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5283377359362519178, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
-      propertyPath: parallaxScale
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5283377359685175969, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
-      propertyPath: screenCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5283377359685175969, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
-      propertyPath: parallaxScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5283377359784471786, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
-      propertyPath: screenCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5283377359879261200, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5283377359879261203, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
-      propertyPath: screenCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5283377359879261203, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
-      propertyPath: parallaxScale
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5283377360426144440, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
       propertyPath: m_RootOrder
       value: 11

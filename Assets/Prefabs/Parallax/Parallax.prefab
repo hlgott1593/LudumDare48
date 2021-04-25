@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1952794165197429270, guid: 36ebefe86054f1d47a2ce7753f93cc09, type: 3}
   screens: []
-  screenCount: 5
+  screenCount: 10
   parallaxScale: 0
   smoothing: 1
   player: {fileID: 0}
@@ -74,7 +74,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5283377359088478836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.17, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5283377360426144440}
@@ -94,8 +94,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 8948278310906425694, guid: 449e9b3408e372147bef562ab09538ff, type: 3}
   screens: []
-  screenCount: 5
-  parallaxScale: 0
+  screenCount: 10
+  parallaxScale: 1
   smoothing: 1
   player: {fileID: 0}
 --- !u!1 &5283377359093152202
@@ -123,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5283377359093152202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5283377360426144440}
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 6002877730515240095, guid: 025333369a96b3d4d9bb488e2e087d27, type: 3}
   screens: []
-  screenCount: 5
+  screenCount: 10
   speed: 0.1
   smoothing: 1
   bounds:
@@ -194,8 +194,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 9016569571088679993, guid: 6854251cbbb9abf47b5549a0a06f782c, type: 3}
   screens: []
-  screenCount: 5
-  parallaxScale: 0.5
+  screenCount: 10
+  parallaxScale: 6
   smoothing: 1
   player: {fileID: 0}
 --- !u!1 &5283377359685175975
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 3625930955320071854, guid: f22a13370dcdd1143895de633800fbdb, type: 3}
   screens: []
-  screenCount: 5
+  screenCount: 10
   parallaxScale: 0
   smoothing: 1
   player: {fileID: 0}
@@ -272,7 +272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5283377359784471785}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5283377360426144440}
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7103008048217590342, guid: 7043096cb317a25469f3d6fe9e037acd, type: 3}
   screens: []
-  screenCount: 5
+  screenCount: 10
   speed: 0.2
   smoothing: 1
   bounds:
@@ -323,7 +323,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5283377359879261201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.3, y: 1.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5283377360426144440}
@@ -343,8 +343,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 8677341620350493675, guid: 0a7384aba9554e842a7462e7f805496e, type: 3}
   screens: []
-  screenCount: 5
-  parallaxScale: 0
+  screenCount: 10
+  parallaxScale: 3
   smoothing: 1
   player: {fileID: 0}
 --- !u!1 &5283377360426144441
