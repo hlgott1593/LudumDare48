@@ -1106,7 +1106,7 @@ GameObject:
   - component: {fileID: 1987089520}
   - component: {fileID: 1987089519}
   m_Layer: 0
-  m_Name: Point Light 2D
+  m_Name: Global Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1124,11 +1124,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LightType: 3
+  m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.05
+  m_Intensity: 0.4
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
@@ -1391,6 +1391,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3018292956233855717, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411796943164310504, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
+      propertyPath: _renderGUI
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411796943164310509, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
+      propertyPath: _renderGUI
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
