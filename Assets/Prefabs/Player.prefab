@@ -145,6 +145,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3018292956233855717}
     m_Modifications:
+    - target: {fileID: 1714095839584866235, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: m_Name
+      value: PointLight
+      objectReference: {fileID: 0}
     - target: {fileID: 6975499140764496050, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -228,6 +232,38 @@ PrefabInstance:
     - target: {fileID: 6975499141451794159, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.716
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986076590870396598, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986076590870396598, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986076590870396598, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: m_LightType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986076590870396598, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.393
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986076590870396598, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986076590870396598, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986076590870396598, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986076590870396598, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[8]
+      value: 2136676401
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
