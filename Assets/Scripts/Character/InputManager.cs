@@ -8,7 +8,14 @@ namespace LD48
     {
         public Vector2 Movement { get; protected set; }
         public bool Jump { get; protected set; }
+        
+        public bool ChangeForm { get; protected set; }
 
+        public void OnChangeForm(InputAction.CallbackContext ctx)
+        {
+            ChangeForm = ctx.performed;
+        }        
+        
         public void OnJump(InputAction.CallbackContext ctx)
         {
             Jump = ctx.performed;
@@ -17,14 +24,6 @@ namespace LD48
         public void OnMovement(InputAction.CallbackContext ctx)
         {
             Movement = ctx.ReadValue<Vector2>();
-        }
-        
-        void OnGUI()
-        {
-            if (Application.isEditor)
-            {
-                GUI.Label(new Rect(100, 120, 100, 100), $"JumpStart {Jump}");
-            }
         }
     }
 }

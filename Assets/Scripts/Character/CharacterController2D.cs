@@ -13,6 +13,7 @@ namespace LD48
         public bool OnMovingPlatform { get; private set; }
         public Vector2 Velocity => _rb.velocity;
         public Vector2 TargetVelocity => _targetVelocity;
+
         
         [Header("Movement")]
         [Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;
@@ -33,7 +34,8 @@ namespace LD48
         private float _x = 0f;
         private float _y = 0f;
         private Vector2 _platformVelocity = Vector2.zero;
-        
+        [SerializeField] private bool _renderGUI;
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -120,21 +122,27 @@ namespace LD48
             _y =  Mathf.Clamp(_targetVelocity.y, -50, +50);
             _targetVelocity = new Vector2(_x, _y);
 
-            _targetVelocity += Physics2D.gravity * Time.fixedDeltaTime; 
+            //_targetVelocity += Physics2D.gravity * Time.fixedDeltaTime; 
             
             if (_platform)
             {
-                _targetVelocity += _platform.Movement() * 1/Time.fixedDeltaTime;
+                var _platformVelocity= _platform.Movement() * 1/Time.fixedDeltaTime;
+                _targetVelocity += _platformVelocity;
             }
             
-            _rb.velocity = Vector3.SmoothDamp(_rb.velocity, _targetVelocity, ref _velocity, _platform ? movementSmoothingOnPlatform : movementSmoothing);
+
+            //_rb.velocity = Vector3.SmoothDamp(_rb.velocity, _targetVelocity, ref _velocity, _platform ? movementSmoothingOnPlatform : movementSmoothing);
+            _rb.velocity = _targetVelocity;
         }
 
         void OnGUI()
         {
-            if (Application.isEditor)
+            if (Application.isEditor && _renderGUI)
             {
-                GUI.Label(new Rect(100, 100, 100, 100), $"Grounded {Grounded}");
+                
+                GUI.Label(new Rect(50, 60, 150, 100), $"TargetVelocity {TargetVelocity}");
+                GUI.Label(new Rect(50, 80, 150, 100), $"Ceiling {Ceiling}");
+                GUI.Label(new Rect(50, 100, 150, 100), $"Grounded {Grounded}");
             }
         }
     }
