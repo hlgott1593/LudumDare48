@@ -30,6 +30,11 @@ namespace LD48
             SetMovement();
         }
 
+        public override void LateProcessAbility()
+        {
+            base.LateProcessAbility();
+        }
+
         private void SetMovement()
         {
             var xVelocity = 0f;
