@@ -1,11 +1,14 @@
 ﻿using System;
 using LD48.Health;
+using SuperTiled2Unity.Editor;
 using UnityEngine;
 
 namespace LD48
 {
     public class Character : MonoBehaviour, IDamagable {
 
+        public static Action GhostFormEntered = delegate { };
+        public static Action CorporealFormEntered = delegate { };
         public HealthSystem HealthSystem { get; private set; }
         public GameObject Behaviour => gameObject;
         public CharacterStates.MovementStates MovementState { get; protected set; }
@@ -21,6 +24,9 @@ namespace LD48
 
         [SerializeField] protected SpriteRenderer model;
         protected CharacterAbility[] _abilities;
+        [SerializeField] private bool _renderGUI;
+        [SerializeField] private int _spiritLayer;
+        [SerializeField] private int _corporealLayer;
 
         protected void Awake() => Initialize();
 
@@ -30,12 +36,12 @@ namespace LD48
             MovementState = CharacterStates.MovementStates.Idle;
             _abilities = GetComponents<CharacterAbility>();
         }
-
         public void OnHealthChanged(float prevAmount) { }
 
         public void OnDeath() {
             Destroy(gameObject.transform.root.gameObject);
         }
+        
         protected void Update()
         {
             HandleInput();
@@ -109,6 +115,16 @@ namespace LD48
         public void ChangeForm(CharacterStates.Form newForm)
         {
             Form = newForm;
+            if (Form == CharacterStates.Form.Ghost) {
+                GhostFormEntered();
+                gameObject.layer = _spiritLayer;
+                gameObject.AssignChildLayers();
+            }
+            else {
+                CorporealFormEntered();
+                gameObject.layer = _corporealLayer;                
+                gameObject.AssignChildLayers();
+            }
         }
 
         protected void UpdateAnimator()
@@ -159,7 +175,7 @@ namespace LD48
         
         void OnGUI()
         {
-            if (Application.isEditor)
+            if (Application.isEditor && _renderGUI)
             {
                 GUI.Label(new Rect(50, 200, 150, 100), $"Form {Form}");
                 // GUI.Label(new Rect(50, 140, 150, 100), $"MovementState {MovementState}");

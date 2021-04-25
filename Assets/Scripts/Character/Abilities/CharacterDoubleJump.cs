@@ -10,6 +10,7 @@ namespace LD48
         [SerializeField] protected bool ignoreYVelocity = true;
         [SerializeField] protected float yVelocityGreaterThan = -1f;
         protected int currentJumpCount;
+        [SerializeField] private bool _renderGUI;
 
         protected override void Initialize()
         {
@@ -52,7 +53,7 @@ namespace LD48
         
         void OnGUI()
         {
-            if (Application.isEditor)
+            if (Application.isEditor && _renderGUI)
             {
                 // GUI.Label(new Rect(50, 180, 100, 100), $"ExtraJumpsLeft {currentJumpCount}");
             }

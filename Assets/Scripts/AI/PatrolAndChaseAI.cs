@@ -126,8 +126,7 @@ namespace LD48 {
 
         private static bool IsInvalidTarget(Collider2D other) =>
             other == null ||
-            other.gameObject == null ||
-            !other.CompareTag("Player");
+            other.gameObject == null;
 
         private void OnTriggerEnter2D(Collider2D other) {
             if (IsInvalidTarget(other)) return;
