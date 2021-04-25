@@ -34,7 +34,8 @@ namespace LD48
         private float _x = 0f;
         private float _y = 0f;
         private Vector2 _platformVelocity = Vector2.zero;
-        
+        [SerializeField] private bool _renderGUI;
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -134,7 +135,7 @@ namespace LD48
 
         void OnGUI()
         {
-            if (Application.isEditor)
+            if (Application.isEditor && _renderGUI)
             {
                 
                 GUI.Label(new Rect(50, 60, 150, 100), $"TargetVelocity {TargetVelocity}");
