@@ -2,7 +2,8 @@
 using UnityEngine;
 
 namespace LD48 {
-    [RequireComponent(typeof(Rigidbody2D), typeof(CircleCollider2D))]
+    [RequireComponent(typeof(Rigidbody2D), typeof(CircleCollider2D), typeof(Animator))]
+    [RequireComponent(typeof(SpriteRenderer))]
     public class PatrolAndChaseAI : MonoBehaviour {
         enum PatrolStates {
             Patrolling,
@@ -12,9 +13,12 @@ namespace LD48 {
 
         PatrolStates PatrolState;
 
+        [SerializeField] protected AnimationMap animations;
         public Vector2 MovementDirection => _direction;
         public float MovementSpeed => movementSpeed;
 
+        private float reachedWaypointDelayLeftToWait = 0;
+        [SerializeField] protected float reachedWaypointDelay = 2f;
         [SerializeField] protected float movementSpeed = 1f;
         [SerializeField] protected float slowRegion = 2f;
         [SerializeField] protected float reachedWaypointThreshold = 0.1f;
@@ -28,8 +32,23 @@ namespace LD48 {
         private Vector2 _towards;
         private Vector2 _direction;
         private CircleCollider2D _col;
+        private SpriteRenderer _renderer;
         public bool _yMovement;
+        private Animator _ani;
 
+        private void Awake() {
+            _rb = GetComponent<Rigidbody2D>();
+            _col = GetComponent<CircleCollider2D>();
+            _ani = GetComponent<Animator>();
+            _renderer = GetComponent<SpriteRenderer>();
+            PatrolState = PatrolStates.Patrolling;
+        }
+
+        private void Start() {
+            _rb.isKinematic = true;
+            _rb.freezeRotation = true;
+            _ani.Play(animations.IdleName);
+        }
         protected void SetMovement() {
             if (currentTarget == null) {
                 _towards = Vector2.zero;
@@ -40,18 +59,6 @@ namespace LD48 {
             _towards = currentTarget.position - transform.position;
             _direction = _towards.normalized;
         }
-
-        private void Awake() {
-            _rb = GetComponent<Rigidbody2D>();
-            _col = GetComponent<CircleCollider2D>();    
-            PatrolState = PatrolStates.Patrolling;
-        }
-
-        private void Start() {
-            _rb.isKinematic = true;
-            _rb.freezeRotation = true;
-        }
-
         protected Transform GetNextTarget() {
             if (PatrolState == PatrolStates.Chasing && currentTarget == null)
                 PatrolState = PatrolStates.ReturningToPatrol;
@@ -71,15 +78,20 @@ namespace LD48 {
 
         private void FixedUpdate() {
             if (currentTarget == null) {
+                if (IdleAtDestination()) return;
+
                 currentTarget = GetNextTarget();
                 return;
             }
 
             SetMovement();
             if (_towards.sqrMagnitude <= reachedWaypointThreshold) {
+                if (IdleAtDestination()) return;
+                
                 currentTarget = GetNextTarget();
             }
 
+            
 
             var speed = movementSpeed;
             if (_towards.sqrMagnitude <= slowRegion) {
@@ -92,8 +104,24 @@ namespace LD48 {
             if (movement.sqrMagnitude > _towards.sqrMagnitude) {
                 movement = _towards;
             }
+            
 
-            _rb.MovePosition((Vector2) transform.position + new Vector2(movement.x, _yMovement ? movement.y : 0));
+            var motion = (Vector2) transform.position + new Vector2(movement.x, _yMovement ? movement.y : 0);
+            _renderer.flipX = motion.x < transform.position.x;
+
+            _rb.MovePosition(motion);
+        }
+
+        private bool IdleAtDestination() {
+            if (reachedWaypointDelayLeftToWait > 0 && PatrolState!= PatrolStates.Chasing) {
+                _ani.Play(animations.IdleName);
+                reachedWaypointDelayLeftToWait -= Time.fixedDeltaTime;
+                return true;
+            }
+
+            _ani.Play(animations.WalkName);
+            reachedWaypointDelayLeftToWait = reachedWaypointDelay;
+            return false;
         }
 
         private static bool IsInvalidTarget(Collider2D other) =>
@@ -111,12 +139,8 @@ namespace LD48 {
             currentTarget = target.transform;
         }
 
-        private void OnTriggerExit2D(Collider2D other) {
+        public void TargetLost(Collider2D other) {
             if (IsInvalidTarget(other)) return;
-            TargetLost(other.gameObject);
-        }
-        
-        private void TargetLost(GameObject target) {
             currentTarget = null;
             PatrolState = PatrolStates.ReturningToPatrol;
         }

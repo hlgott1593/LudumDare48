@@ -30,9 +30,7 @@ namespace LD48
             _abilities = GetComponents<CharacterAbility>();
         }
 
-        public void OnHealthChanged(float prevAmount) {
-            Debug.Log(HealthSystem.CurrentHp);
-        }
+        public void OnHealthChanged(float prevAmount) { }
 
         public void OnDeath() {
             Destroy(gameObject.transform.root.gameObject);
