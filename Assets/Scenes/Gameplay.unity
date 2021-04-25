@@ -232,11 +232,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!4 &59335694 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2857739038188051838, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
-  m_PrefabInstance: {fileID: 3018292956616205509}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &225009718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -462,8 +457,8 @@ MonoBehaviour:
   m_AssetsPPU: 16
   m_RefResolutionX: 320
   m_RefResolutionY: 180
-  m_UpscaleRT: 1
-  m_PixelSnapping: 0
+  m_UpscaleRT: 0
+  m_PixelSnapping: 1
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
@@ -653,6 +648,10 @@ PrefabInstance:
     - target: {fileID: 5283377360426144441, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
       propertyPath: m_Name
       value: Parallax
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283377360426144441, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
@@ -917,6 +916,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!4 &1725510699 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5411796943164310501, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
+  m_PrefabInstance: {fileID: 3018292956616205509}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1752804472
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,7 +958,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 59335694}
+  m_Follow: {fileID: 1725510699}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 20

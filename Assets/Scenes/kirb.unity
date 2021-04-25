@@ -1235,6 +1235,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PostProcessingVolumes
       objectReference: {fileID: 0}
+    - target: {fileID: 2692208448844587445, guid: 8f782d9c33cc06b46b684edfd9d1c0ba, type: 3}
+      propertyPath: weight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2692208448844587450, guid: 8f782d9c33cc06b46b684edfd9d1c0ba, type: 3}
       propertyPath: m_RootOrder
       value: 9
