@@ -47,7 +47,6 @@ namespace LD48
             else
             {
                 xVelocity = _movement.x * movementSpeed;
-                _controller.SetTargetVelocityY(0);
             }
 
             if (_character.MovementState == CharacterStates.MovementStates.Falling)
@@ -57,6 +56,7 @@ namespace LD48
 
             _controller.SetTargetVelocityX(xVelocity);
             _controller.AddTargetVelocityY(fallVelocityBoost);
+            if (_controller.Grounded) _controller.SetVelocityY(0);
             
         }
 
@@ -79,17 +79,22 @@ namespace LD48
             }
             
             //
-            if (_controller.Grounded && (_controller.Velocity.magnitude > idleThreshold) &&
+            if (_controller.Grounded && (Mathf.Abs(_inputManager.Movement.x) > idleThreshold) &&
                 (_character.MovementState == CharacterStates.MovementStates.Idle))
             {
                 _character.ChangeMovementState(CharacterStates.MovementStates.Running);	
             }
             
-            if (_controller.Grounded && (_controller.Velocity.magnitude <= idleThreshold) &&
+            if (_controller.Grounded && (Mathf.Abs(_inputManager.Movement.x) <= idleThreshold) &&
                 (_character.MovementState == CharacterStates.MovementStates.Running))
             {
                 _character.ChangeMovementState(CharacterStates.MovementStates.Idle);	
             }
+        }
+
+        public override void UpdateAnimator()
+        {
+            _animator?.SetBool("Grounded", _controller.Grounded);
         }
     }
 }

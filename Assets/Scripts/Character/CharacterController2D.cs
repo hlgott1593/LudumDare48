@@ -81,6 +81,11 @@ namespace LD48
             _targetVelocity.x += velocityChange;
         }
         
+        public void SetVelocityY(float newY)
+        {
+            _rb.velocity = new Vector2(_rb.velocity.x, newY);
+        }
+        
         public void SetTargetVelocityY(float newXVelocity)
         {
             _targetVelocity.y = newXVelocity;

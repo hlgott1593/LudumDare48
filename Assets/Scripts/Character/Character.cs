@@ -9,6 +9,9 @@ namespace LD48
         public CharacterStates.CharacterConditions Condition { get; protected set; }
         public InputManager InputManager => inputManager;
         [SerializeField] private InputManager inputManager;
+
+        public Animator Animator => animator;
+        [SerializeField] private Animator animator;
         
         public SpriteRenderer Model => model;
 
@@ -91,6 +94,51 @@ namespace LD48
         public void ChangeMovementState(CharacterStates.MovementStates newState)
         {
             MovementState = newState;
+            UpdateAnimator();
+        }
+
+        protected void UpdateAnimator()
+        {
+            
+            if (MovementState == CharacterStates.MovementStates.Idle)
+            {
+                animator?.SetBool("Idle", true);
+                animator?.SetBool("Running", false);
+                animator?.SetBool("Jumping", false);
+                animator?.SetBool("Falling", false);
+            }
+            if (MovementState == CharacterStates.MovementStates.Falling)
+            {
+                animator?.SetBool("Idle", false);
+                animator?.SetBool("Running", false);
+                animator?.SetBool("Jumping", false);
+                animator?.SetBool("Falling", true);
+            }
+            
+            if (MovementState == CharacterStates.MovementStates.Jumping)
+            {
+                animator?.SetBool("Idle", false);
+                animator?.SetBool("Running", false);
+                animator?.SetBool("Jumping", true);
+                animator?.SetBool("Falling", false);
+            }
+            
+            if (MovementState == CharacterStates.MovementStates.DoubleJumping)
+            {
+                animator?.SetBool("Idle", false);
+                animator?.SetBool("Running", false);
+                animator?.SetBool("Jumping", true);
+                animator?.SetBool("Falling", false);
+            }
+            
+            if (MovementState == CharacterStates.MovementStates.Running)
+            {
+                animator?.SetBool("Idle", false);
+                animator?.SetBool("Running", true);
+                animator?.SetBool("Jumping", false);
+                animator?.SetBool("Falling", false);
+            }
+            
         }
         
         

@@ -18,6 +18,7 @@ namespace LD48
         protected Character _character;
         protected InputManager _inputManager;
         protected CharacterController2D _controller;
+        protected Animator _animator;
         
         protected void Start() => Initialize();
         
@@ -26,6 +27,7 @@ namespace LD48
             _character = GetComponent<Character>();
             _controller = GetComponent<CharacterController2D>();
             _inputManager = _character.InputManager;
+            _animator = _character.Animator;
             _isInitialized = true;
         }
 
