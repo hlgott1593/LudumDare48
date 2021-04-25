@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1741436150645873650}
   - component: {fileID: 1482597263498896373}
   - component: {fileID: 7900035258262019259}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Damage spher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2975777900743034434}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: waypoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,8 @@ GameObject:
   - component: {fileID: 2975777900803841742}
   - component: {fileID: 2975777900803841739}
   - component: {fileID: 1739193965}
-  m_Layer: 0
+  - component: {fileID: 269851981747315574}
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +194,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0bd9a6f83ef0652489b1bb375d60f315, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -260,6 +261,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &269851981747315574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2975777900803841728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad066bf773ab493b9ca04bd8cd94ec81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _blurAmount: 0.1
+  _alphaAmount: 0.66
+  _duration: 0.25
 --- !u!1 &2975777901313071480
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2975777901313071431}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: waypoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2975777902443741342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: waypoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +379,7 @@ GameObject:
   - component: {fileID: 4643759922794581939}
   - component: {fileID: 8205142720899786447}
   - component: {fileID: 8479380603741081276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leash
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -30,6 +30,10 @@ namespace LD48
 
         protected void Awake() => Initialize();
 
+        private void Start() {
+            CorporealFormEntered();
+        }
+
         protected void Initialize() {
             HealthSystem = new HealthSystem(this, new HealthConfig(3, false));
             Condition = CharacterStates.CharacterConditions.Normal;
