@@ -1,4 +1,6 @@
-﻿namespace LD48
+﻿using UnityEngine;
+
+namespace LD48
 {
     public class CharacterOrientation : CharacterAbility
     {
@@ -35,7 +37,7 @@
 
         private void DetermineFacingDirection()
         {
-            if (_controller.Velocity.sqrMagnitude <= 0.1f) return;
+            if (Mathf.Abs(_controller.Velocity.x) <= 0.1f) return;
             _direction = _controller.Velocity.x >= 0 ? Direction.Right : Direction.Left;
         }
 

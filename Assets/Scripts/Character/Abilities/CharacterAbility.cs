@@ -10,7 +10,8 @@ namespace LD48
         
         [SerializeField] protected List<CharacterStates.CharacterConditions> blockedConditionStates;
         [SerializeField] protected List<CharacterStates.MovementStates> blockedMovementStates;
-
+        [SerializeField] protected bool renderGUI = false;
+        
         public bool IsUnlocked = true;
         public bool IsInitialized => _isInitialized;
         protected bool _isInitialized = false;

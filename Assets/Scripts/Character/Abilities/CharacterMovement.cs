@@ -71,7 +71,8 @@ namespace LD48
 
         private void HandleMovementState()
         {
-            //
+            if (_character.MovementState == CharacterStates.MovementStates.Dashing) return;
+            
             if (!_controller.Grounded && (_character.Condition == CharacterStates.CharacterConditions.Normal)
                 && (
                     (_character.MovementState == CharacterStates.MovementStates.Idle) ||

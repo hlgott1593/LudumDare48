@@ -384,8 +384,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1148406423}
-  m_Follow: {fileID: 1148406423}
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 1183109493}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 20
@@ -409,7 +409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 387862608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.77, y: -4.33, z: -10}
+  m_LocalPosition: {x: -6.31, y: -4.33, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 256549193}
@@ -496,7 +496,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505053047}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.77, y: -4.33, z: -10}
+  m_LocalPosition: {x: -6.31, y: -4.33, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1061,11 +1061,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!4 &1148406423 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2857739039642031455, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
+--- !u!1 &1183109492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5411796943164310502, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
   m_PrefabInstance: {fileID: 5720153215354135436}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1183109493 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5411796943164310501, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
+  m_PrefabInstance: {fileID: 5720153215354135436}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1183109494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183109492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c45f131046b4d649149dce042cc6abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockedConditionStates: 
+  blockedMovementStates: 
+  IsUnlocked: 1
+  dashDuration: 1
+  dashVelocity: 50
 --- !u!1 &1195536906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,7 +1334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3018292956233855717, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.77
+      value: -6.31
       objectReference: {fileID: 0}
     - target: {fileID: 3018292956233855717, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1349,6 +1371,14 @@ PrefabInstance:
     - target: {fileID: 3018292956233855717, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411796943164310504, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
+      propertyPath: _renderGUI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411796943164310507, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
+      propertyPath: _renderGUI
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e88705bf57af17846b56d7b16c18b536, type: 3}

@@ -8,9 +8,14 @@ namespace LD48
     {
         public Vector2 Movement { get; protected set; }
         public bool Jump { get; protected set; }
-        
         public bool ChangeForm { get; protected set; }
+        public bool Special { get; protected set; }
 
+        public void OnSpecial(InputAction.CallbackContext ctx)
+        {
+            Special = ctx.performed;
+        }     
+        
         public void OnChangeForm(InputAction.CallbackContext ctx)
         {
             ChangeForm = ctx.performed;
