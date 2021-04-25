@@ -15,8 +15,8 @@ TagManager:
   - SpiritWorld_Player
   - CorporealWorld_Enemy
   - SpiritWorld_Enemy
-  - 
-  - 
+  - SpiritCollides
+  - CorporealCollides
   - 
   - 
   - 
