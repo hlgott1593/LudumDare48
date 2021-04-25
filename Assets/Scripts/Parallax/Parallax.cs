@@ -8,7 +8,7 @@ namespace LD48
     {
         public GameObject prefab;
 
-        public List<GameObject> screens;
+        public List<Transform> screens;
         public int screenCount = 5;
         public float parallaxScale;
         public float smoothing = 1f;
@@ -31,6 +31,7 @@ namespace LD48
                 var screen = Instantiate(prefab, transform);
                 var width = screen.GetComponent<SpriteRenderer>().bounds.size.x;
                 screen.transform.position = new Vector3((i + offsetX) * width, screen.transform.position.y, screen.transform.position.z);
+                screens.Add(screen.transform);
             }
 
             previousPlayerPos = player.position;
@@ -43,6 +44,7 @@ namespace LD48
             float backgroundTargetPosX = transform.position.x + parallax;
             Vector3 backgroundTargetPos = new Vector3(backgroundTargetPosX, transform.position.y, transform.position.z);
             transform.position = Vector3.Lerp(transform.position, backgroundTargetPos, smoothing * Time.deltaTime);
+            previousPlayerPos = player.position;
         }
     }
 }

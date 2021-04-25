@@ -37,9 +37,6 @@ namespace LD48
         // Update is called once per frame
         void Update()
         {
-            // float backgroundTargetPosX = transform.position.x + speed;
-            // Vector3 backgroundTargetPos = new Vector3(backgroundTargetPosX, transform.position.y, transform.position.z);
-            
             foreach (var screen in screens)
             {
                 screen.transform.localPosition = Vector3.Lerp(
@@ -47,7 +44,6 @@ namespace LD48
                     screen.transform.localPosition + Vector3.right * speed,
                     smoothing * Time.deltaTime
                 );
-                // screen.transform.localPosition += Vector3.right * speed;      
                 if (screen.transform.position.x > bounds.size.x * (screenCount - screenCount / 2))
                 {
                     screen.transform.position += Vector3.left * bounds.size.x * screenCount;
