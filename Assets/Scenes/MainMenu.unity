@@ -783,7 +783,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1652269762}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 402ddf7ad62056946866b288f483d4a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 726a57b616c6c664cad8572de201521c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Fade: {fileID: 995118056}
