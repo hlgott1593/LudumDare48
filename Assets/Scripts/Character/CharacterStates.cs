@@ -22,7 +22,8 @@
             Falling,
             Running,
             Jumping,
-            DoubleJumping
+            DoubleJumping,
+            Dashing,
         }
     }
 }

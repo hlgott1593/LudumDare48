@@ -41,6 +41,14 @@ public class @CharacterActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Special"",
+                    ""type"": ""Button"",
+                    ""id"": ""cdd39bcc-a82e-45c3-aaac-b5be5db17a60"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -153,6 +161,28 @@ public class @CharacterActions : IInputActionCollection, IDisposable
                     ""action"": ""ChangeForm"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""401131e8-ba17-482f-a001-80bea8cd5213"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""39e99807-1ade-44bc-8879-b4d4a0c2be6e"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -187,6 +217,7 @@ public class @CharacterActions : IInputActionCollection, IDisposable
         m_CharacterControls_Movement = m_CharacterControls.FindAction("Movement", throwIfNotFound: true);
         m_CharacterControls_Jump = m_CharacterControls.FindAction("Jump", throwIfNotFound: true);
         m_CharacterControls_ChangeForm = m_CharacterControls.FindAction("ChangeForm", throwIfNotFound: true);
+        m_CharacterControls_Special = m_CharacterControls.FindAction("Special", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -239,6 +270,7 @@ public class @CharacterActions : IInputActionCollection, IDisposable
     private readonly InputAction m_CharacterControls_Movement;
     private readonly InputAction m_CharacterControls_Jump;
     private readonly InputAction m_CharacterControls_ChangeForm;
+    private readonly InputAction m_CharacterControls_Special;
     public struct CharacterControlsActions
     {
         private @CharacterActions m_Wrapper;
@@ -246,6 +278,7 @@ public class @CharacterActions : IInputActionCollection, IDisposable
         public InputAction @Movement => m_Wrapper.m_CharacterControls_Movement;
         public InputAction @Jump => m_Wrapper.m_CharacterControls_Jump;
         public InputAction @ChangeForm => m_Wrapper.m_CharacterControls_ChangeForm;
+        public InputAction @Special => m_Wrapper.m_CharacterControls_Special;
         public InputActionMap Get() { return m_Wrapper.m_CharacterControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -264,6 +297,9 @@ public class @CharacterActions : IInputActionCollection, IDisposable
                 @ChangeForm.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnChangeForm;
                 @ChangeForm.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnChangeForm;
                 @ChangeForm.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnChangeForm;
+                @Special.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnSpecial;
+                @Special.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnSpecial;
+                @Special.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnSpecial;
             }
             m_Wrapper.m_CharacterControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -277,6 +313,9 @@ public class @CharacterActions : IInputActionCollection, IDisposable
                 @ChangeForm.started += instance.OnChangeForm;
                 @ChangeForm.performed += instance.OnChangeForm;
                 @ChangeForm.canceled += instance.OnChangeForm;
+                @Special.started += instance.OnSpecial;
+                @Special.performed += instance.OnSpecial;
+                @Special.canceled += instance.OnSpecial;
             }
         }
     }
@@ -304,5 +343,6 @@ public class @CharacterActions : IInputActionCollection, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnChangeForm(InputAction.CallbackContext context);
+        void OnSpecial(InputAction.CallbackContext context);
     }
 }

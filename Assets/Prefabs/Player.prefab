@@ -106,6 +106,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e19ba39f-8eb3-47fd-9c5b-68da365b9d34
     m_ActionName: CharacterControls/ChangeForm[/Keyboard/q,/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3018292956233855716}
+        m_TargetAssemblyTypeName: LD48.InputManager, Assembly-CSharp
+        m_MethodName: OnSpecial
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cdd39bcc-a82e-45c3-aaac-b5be5db17a60
+    m_ActionName: CharacterControls/Special[/Keyboard/shift,/XInputControllerWindows/buttonWest]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: CharacterControls
@@ -123,6 +139,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06990a0e22494f12a9c022a3b1fef326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1183109494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5411796943164310502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c45f131046b4d649149dce042cc6abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockedConditionStates: 
+  blockedMovementStates: 
+  renderGUI: 0
+  IsUnlocked: 1
+  dashDuration: 0.25
+  dashVelocity: 100
 --- !u!1001 &3159102684281566047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,6 +164,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3018292956233855717}
     m_Modifications:
+    - target: {fileID: 6975499140764496052, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: _renderGUI
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6975499140764496052, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: _spiritLayer
       value: 7
@@ -141,6 +179,10 @@ PrefabInstance:
     - target: {fileID: 6975499140764496052, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: _corporealLayer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496055, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: _renderGUI
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6975499140764496057, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: m_Name
@@ -192,6 +234,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+--- !u!1 &5411796943164310502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6975499140764496057, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+  m_PrefabInstance: {fileID: 3159102684281566047}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5411796943164310501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6975499140764496058, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
