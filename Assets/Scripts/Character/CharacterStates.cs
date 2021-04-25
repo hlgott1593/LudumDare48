@@ -2,6 +2,13 @@
 {
     public class CharacterStates
     {
+
+        public enum Form
+        {
+            Shaman,
+            Ghost
+        }
+        
         public enum CharacterConditions
         {
             Normal,
