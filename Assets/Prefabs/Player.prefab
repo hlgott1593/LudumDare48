@@ -208,6 +208,14 @@ PrefabInstance:
       propertyPath: _corporealLayer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496052, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: ghostCollisionLayer.m_Bits
+      value: 1025
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496052, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: corporealCollisionlayer.m_Bits
+      value: 2049
+      objectReference: {fileID: 0}
     - target: {fileID: 6975499140764496053, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: blockedConditionStates.Array.size
       value: 1
