@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 6975499140764496049}
   - component: {fileID: 6975499140764496050}
   - component: {fileID: 6975499140764496053}
+  - component: {fileID: 5794662903698514181}
   m_Layer: 6
   m_Name: Shaman
   m_TagString: Untagged
@@ -297,6 +298,9 @@ MonoBehaviour:
   inputManager: {fileID: 0}
   animator: {fileID: 6975499140106647700}
   model: {fileID: 6975499140106647706}
+  _renderGUI: 0
+  _spiritLayer: 0
+  _corporealLayer: 0
 --- !u!114 &6975499140764496055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +324,7 @@ MonoBehaviour:
   ceilingCheckPositions:
   - {fileID: 6975499141451794159}
   - {fileID: 6975499141355221092}
+  _renderGUI: 0
 --- !u!114 &6975499140764496059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,6 +381,7 @@ MonoBehaviour:
   extraJumpCount: 1
   ignoreYVelocity: 1
   yVelocityGreaterThan: -1
+  _renderGUI: 0
 --- !u!114 &6975499140764496053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,6 +392,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 754a6fae366142d09181932ac5d1f312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockedConditionStates: 
+  blockedMovementStates: 
+  IsUnlocked: 1
+--- !u!114 &5794662903698514181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6975499140764496057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f2f45d03b4d3e44857409d3b69b6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   blockedConditionStates: 

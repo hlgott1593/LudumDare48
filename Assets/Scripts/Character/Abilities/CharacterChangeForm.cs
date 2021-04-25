@@ -26,6 +26,7 @@ namespace LD48
 
         protected void ChangeForm()
         {
+            Debug.Log("ChangeForm");
             if (_change)
             {
                 _change = false;
