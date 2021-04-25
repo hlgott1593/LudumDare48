@@ -36,17 +36,6 @@ namespace LD48 {
         public bool _yMovement;
         private Animator _ani;
 
-        protected void SetMovement() {
-            if (currentTarget == null) {
-                _towards = Vector2.zero;
-                _direction = Vector2.zero;
-                return;
-            }
-
-            _towards = currentTarget.position - transform.position;
-            _direction = _towards.normalized;
-        }
-
         private void Awake() {
             _rb = GetComponent<Rigidbody2D>();
             _col = GetComponent<CircleCollider2D>();
@@ -58,8 +47,18 @@ namespace LD48 {
         private void Start() {
             _rb.isKinematic = true;
             _rb.freezeRotation = true;
+            _ani.Play(animations.IdleName);
         }
+        protected void SetMovement() {
+            if (currentTarget == null) {
+                _towards = Vector2.zero;
+                _direction = Vector2.zero;
+                return;
+            }
 
+            _towards = currentTarget.position - transform.position;
+            _direction = _towards.normalized;
+        }
         protected Transform GetNextTarget() {
             if (PatrolState == PatrolStates.Chasing && currentTarget == null)
                 PatrolState = PatrolStates.ReturningToPatrol;

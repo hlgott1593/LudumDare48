@@ -38,6 +38,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: background3
+    uniqueID: 2793463239
+    locked: 0
+  - name: fog2
+    uniqueID: 2530147945
+    locked: 0
+  - name: background2
+    uniqueID: 2041468563
+    locked: 0
+  - name: fog1
+    uniqueID: 1248774513
+    locked: 0
+  - name: background1
+    uniqueID: 937743993
+    locked: 0
+  - name: ground_transition
+    uniqueID: 2676180119
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: foreground
+    uniqueID: 640111283
     locked: 0
