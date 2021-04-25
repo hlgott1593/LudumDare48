@@ -12,8 +12,8 @@ namespace LD48
         protected Vector2 _dashDirection = Vector2.right;
         
         
-        [SerializeField] protected float dashDuration = 1.5f;
-        [SerializeField] protected float dashVelocity = 10f;
+        [SerializeField] protected float dashDuration = 0.25f;
+        [SerializeField] protected float dashVelocity = 100f;
         private double _dashStartAt;
 
 
@@ -24,7 +24,6 @@ namespace LD48
             
             if (PressedThisFrame())
             {
-                Debug.Log("Pressed");
                 DashStart();
             }
         }
@@ -49,7 +48,6 @@ namespace LD48
         public void DashStart()
         {
             if (!CheckDashStartConditions()) return;
-            Debug.Log("dash start");
             _dashing = true;
             _canDash = false;
             _dashStartAt = Time.time;
@@ -59,7 +57,6 @@ namespace LD48
 
         public void DashEnd()
         {
-            Debug.Log("dash end");
             _dashing = false;
             _character.ChangeMovementState(CharacterStates.MovementStates.Idle);
         }
