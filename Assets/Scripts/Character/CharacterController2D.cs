@@ -9,6 +9,7 @@ namespace LD48
     public class CharacterController2D : MonoBehaviour
     {
         public bool Grounded { get; private set; }
+        public bool Ceiling { get; private set; }
         public bool OnMovingPlatform { get; private set; }
         public Vector2 Velocity => _rb.velocity;
         public Vector2 TargetVelocity => _targetVelocity;
@@ -20,10 +21,12 @@ namespace LD48
         [Header("Ground")]
         [SerializeField] private LayerMask groundLayerMask;
         [SerializeField] private List<Transform> groundCheckPositions = new List<Transform>();
+        [SerializeField] private List<Transform> ceilingCheckPositions = new List<Transform>();
         
         
         private Rigidbody2D _rb;
         private Collider2D _groundTest;
+        private Collider2D _ceilingTest;
         private MovingPlatform _platform;
         private Vector2 _targetVelocity = Vector2.zero;
         private Vector3 _velocity = Vector3.zero;
@@ -34,14 +37,15 @@ namespace LD48
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
+            Ceiling = false;
         }
 
         private void Update()
         {
-            GroundCheck();
+            CollissionCheck();
         }
         
-        private void GroundCheck()
+        private void CollissionCheck()
         {
 
             MovingPlatform platform = null;
@@ -67,8 +71,17 @@ namespace LD48
                 _platform = null;
             }
 
+            var isCeiling = false;
+            foreach (var checkPosition in ceilingCheckPositions)
+            {
+                _ceilingTest = Physics2D.OverlapPoint((Vector2) checkPosition.position, groundLayerMask);
+                isCeiling = isCeiling || _ceilingTest != null;
+            }
+            
+
             Grounded = isGrounded;
             OnMovingPlatform = isOnMovingPlatform;
+            Ceiling = isCeiling;
         }
 
         public void SetTargetVelocityX(float newXVelocity)

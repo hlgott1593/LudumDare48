@@ -66,7 +66,7 @@ namespace LD48
             if (!CheckJumpStartConditions()) return;
             _jumpStartedAt = Time.time;
             _jumping = true;
-            
+            _controller.SetTargetVelocityY(0);
             SetJumpState();
         }
 
@@ -80,7 +80,7 @@ namespace LD48
         public override void ProcessAbility()
         {
             if (!CheckIsJumping()) return;
-            if (Time.time - _jumpStartedAt >= jumpDuration)
+            if (Time.time - _jumpStartedAt >= jumpDuration || _controller.Ceiling)
             {
                 JumpEnd();                       
             }
