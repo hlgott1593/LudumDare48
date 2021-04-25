@@ -9,6 +9,7 @@ namespace LD48
         // Start is called before the first frame update
         public void StartLoad(string sceneName)
         {
+            Debug.Log($"Loading {sceneName}");
             SceneLoadingManager.LoadScene(sceneName);
         }
 

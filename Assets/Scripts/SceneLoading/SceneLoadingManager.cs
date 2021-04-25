@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,7 +14,7 @@ namespace LD48
         public float ExitFadeDuration=0.2f;
         public float LoadCompleteDelay=0.5f;
         public Image _progressBarImage;
-        
+        public CanvasGroup Fade;
         
         public static string LoadingScreenSceneName = "LoadingScreen";
         protected static string _sceneToLoad = "";
@@ -32,6 +33,8 @@ namespace LD48
             // _tween = new MMTweenType(MMTween.MMTweenCurve.EaseOutCubic);
             // _progressBarImage = LoadingProgressBar.GetComponent<Image>();
             // _loadingTextValue =LoadingText.text;
+
+            _progressBarImage.fillAmount = 0;
             
             if (!string.IsNullOrEmpty(_sceneToLoad))
             {
@@ -41,11 +44,17 @@ namespace LD48
 
         protected void Update()
         {
-            _progressBarImage.fillAmount = _progressFillTarget;
+            _progressBarImage.fillAmount = Mathf.Lerp(_progressBarImage.fillAmount, _progressFillTarget, ProgressBarSpeed * Time.deltaTime);
+            if (_progressBarImage.fillAmount >= 0.97)
+            {
+                _progressBarImage.fillAmount = _progressFillTarget;
+            }
         }
 
-        protected virtual IEnumerator LoadAsynchronously() 
+        protected virtual IEnumerator LoadAsynchronously()
         {
+            Fade.alpha = 1;
+            var tween = DOTween.Sequence().Append(DOTween.To(() => Fade.alpha, (v) => Fade.alpha = v, 0f, StartFadeDuration)).SetEase(Ease.InCirc);
             yield return new WaitForSeconds(StartFadeDuration);
             
             // we start loading the scene
@@ -71,6 +80,7 @@ namespace LD48
             LoadingComplete();
             yield return new WaitForSeconds(LoadCompleteDelay);
 
+            var tween2 = DOTween.Sequence().Append(DOTween.To(() => Fade.alpha, (v) => Fade.alpha = v, 1f, ExitFadeDuration)).SetEase(Ease.InCirc);
             yield return new WaitForSeconds(ExitFadeDuration);
 
             // we switch to the new scene
