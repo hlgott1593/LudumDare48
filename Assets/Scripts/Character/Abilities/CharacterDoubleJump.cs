@@ -55,7 +55,7 @@ namespace LD48
         {
             if (Application.isEditor && _renderGUI)
             {
-                GUI.Label(new Rect(50, 180, 100, 100), $"ExtraJumpsLeft {currentJumpCount}");
+                // GUI.Label(new Rect(50, 180, 100, 100), $"ExtraJumpsLeft {currentJumpCount}");
             }
         }
         

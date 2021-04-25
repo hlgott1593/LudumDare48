@@ -178,7 +178,7 @@ namespace LD48
             if (Application.isEditor && _renderGUI)
             {
                 GUI.Label(new Rect(50, 200, 150, 100), $"Form {Form}");
-                GUI.Label(new Rect(50, 140, 150, 100), $"MovementState {MovementState}");
+                // GUI.Label(new Rect(50, 140, 150, 100), $"MovementState {MovementState}");
             }
         }
 
