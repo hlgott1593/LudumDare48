@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c45f131046b4d649149dce042cc6abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockedConditionStates: 
+  blockedConditionStates: 02000000
   blockedMovementStates: 
   renderGUI: 0
   IsUnlocked: 1
@@ -164,8 +164,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3018292956233855717}
     m_Modifications:
+    - target: {fileID: 5794662903698514181, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: blockedConditionStates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794662903698514181, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: blockedConditionStates.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496049, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: blockedConditionStates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496049, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: blockedConditionStates.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496050, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: blockedConditionStates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496050, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: blockedConditionStates.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6975499140764496052, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: _renderGUI
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496052, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: RespawnDelay
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6975499140764496052, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
@@ -180,9 +208,13 @@ PrefabInstance:
       propertyPath: _corporealLayer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496053, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: blockedConditionStates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6975499140764496055, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: _renderGUI
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6975499140764496057, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: m_Name
@@ -231,6 +263,18 @@ PrefabInstance:
     - target: {fileID: 6975499140764496058, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496059, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: renderGUI
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496059, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: blockedConditionStates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496059, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: blockedConditionStates.Array.data[0]
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
