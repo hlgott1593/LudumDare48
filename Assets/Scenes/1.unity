@@ -218,6 +218,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _alphaAmount: 0.2
   _duration: 0.2
+--- !u!1 &31945454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6206014520211659660, guid: 3db9b765f341f2044b1ea3003e32c5ba, type: 3}
+  m_PrefabInstance: {fileID: 31945449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &31945455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31945454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d906b1849c0440989ac72bc88505696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageAmount: 99
 --- !u!1001 &219459803
 PrefabInstance:
   m_ObjectHideFlags: 0
