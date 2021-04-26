@@ -43,6 +43,7 @@ namespace LD48
         protected void Awake() => Initialize();
 
         private void Start() {
+            Application.quitting += CorporealFormEntered;
             CorporealFormEntered();
             _controller.groundLayerMask = corporealCollisionlayer;
 

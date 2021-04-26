@@ -1,6 +1,4 @@
-using System.Collections;
 using DG.Tweening;
-using SuperTiled2Unity;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -12,13 +10,13 @@ namespace LD48 {
         private bool IsCorporeal() => gameObject.layer.Equals(CorporealGroundLayer);
         private bool IsSprit() => gameObject.layer.Equals(SpiritGroundLayer);
 
-        private Tilemap _thing;
+        private Tilemap _tilemap;
         [SerializeField] private float _alphaAmount;
         [SerializeField] private float _duration;
         private Sequence _sequence;
 
         private void OnEnable() {
-            _thing = GetComponent<Tilemap>();
+            _tilemap = GetComponent<Tilemap>();
             if (IsCorporeal()) {
                 Character.GhostFormEntered += Blur;
                 Character.CorporealFormEntered += Focus;
@@ -30,30 +28,15 @@ namespace LD48 {
         }
 
         public void Blur() {
-            StopAllCoroutines();
-            StartCoroutine(FadeAlpha());
+            _sequence = DOTween.Sequence()
+                .Append(DOTween.To(() => _tilemap.color.a, v => _tilemap.color = new Color(1,1,1,v), _alphaAmount, _duration))
+                .SetEase(Ease.InCubic);
         }
 
-        private IEnumerator FadeAlpha() {
-            _thing.color = Color.white;
-            while (_thing.color.a > _alphaAmount) {
-                _thing.color = new Color(1,1,1,_thing.color.a - Time.deltaTime);
-                yield return new WaitForEndOfFrame();
-            }
-            _thing.color = new Color(1,1,1,_alphaAmount);
-        }
-
-        private IEnumerator AddAlpha() {
-            _thing.color = Color.white;
-            while (_thing.color.a > 1) {
-                _thing.color = new Color(1,1,1,_thing.color.a - Time.deltaTime);
-                yield return new WaitForEndOfFrame();
-            }
-            _thing.color = Color.white;
-        }
         private void Focus() {
-            StopAllCoroutines();
-            StartCoroutine(AddAlpha());
+            _sequence = DOTween.Sequence()
+                .Append(DOTween.To(() => _tilemap.color.a, v => _tilemap.color = new Color(1,1,1,v), 1, _duration))
+                .SetEase(Ease.InCubic);
         }
 
         private void OnDisable() {
@@ -66,7 +49,7 @@ namespace LD48 {
                 Character.CorporealFormEntered -= Blur;
             }
 
-            StopAllCoroutines();
+            _sequence?.Kill();
         }
     }
 }
