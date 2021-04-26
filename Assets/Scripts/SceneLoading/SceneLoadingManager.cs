@@ -25,13 +25,12 @@ namespace LD48
         protected static string _displayText = "";
         public bool continueClicked = false;
         
-        
-        public static void LoadScene(string sceneToLoad, string displayText = "")
+        public static void LoadScene(string sceneToLoad)
         {
             _sceneToLoad = sceneToLoad;
-            _displayText = displayText;
             SceneManager.LoadScene(LoadingScreenSceneName);
         }
+        
         protected virtual void Start()
         {
             // _tween = new MMTweenType(MMTween.MMTweenCurve.EaseOutCubic);
@@ -89,7 +88,7 @@ namespace LD48
 
 
             // Wait until click
-            yield return new WaitUntil(() => _displayText != "" && continueClicked);
+            //yield return new WaitUntil(() => _displayText != "" && continueClicked);
 
             // we switch to the new scene
             _asyncOperation.allowSceneActivation = true;
