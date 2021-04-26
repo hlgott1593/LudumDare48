@@ -88,7 +88,7 @@ namespace LD48
 
 
             // Wait until click
-            yield return new WaitUntil(() => _displayText != "" && continueClicked);
+            //yield return new WaitUntil(() => _displayText != "" && continueClicked);
 
             // we switch to the new scene
             _asyncOperation.allowSceneActivation = true;
