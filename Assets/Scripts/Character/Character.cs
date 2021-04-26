@@ -185,7 +185,14 @@ namespace LD48
 
         protected void UpdateAnimator()
         {
-            
+            if (MovementState == CharacterStates.MovementStates.Dashing)
+            {
+                animator?.SetBool("Idle", false);
+                animator?.SetBool("Running", false);
+                animator?.SetBool("Jumping", false);
+                animator?.SetBool("Falling", false);
+                animator?.SetBool("Dashing", true);
+            }
             if (MovementState == CharacterStates.MovementStates.Idle)
             {
                 animator?.SetBool("Idle", true);
