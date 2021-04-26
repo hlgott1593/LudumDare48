@@ -52,6 +52,7 @@ namespace LD48
             _canDash = false;
             _dashStartAt = Time.time;
             _dashDirection = _directionCache;
+            PlayStartSfxRandomPitch(0.9f, 1.1f);
             _character.ChangeMovementState(CharacterStates.MovementStates.Dashing);
         }
 
