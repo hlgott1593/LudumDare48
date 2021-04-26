@@ -45,6 +45,7 @@ namespace LD48
         public override void LateProcessAbility()
         {
             _lastFrameJump = _inputManager.Jump;
+            if (_controller.Grounded) _jumping = false;
         }
 
         protected virtual bool CheckJumpStartConditions()
@@ -66,6 +67,7 @@ namespace LD48
             if (!CheckJumpStartConditions()) return;
             _jumpStartedAt = Time.time;
             _jumping = true;
+            PlayStartSfxRandomPitch(0.9f, 1.1f);
             SetJumpState();
         }
 

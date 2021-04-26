@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using LD48.Audio;
 using UnityEngine;
 
 
@@ -11,6 +12,31 @@ namespace LD48
         [SerializeField] protected List<CharacterStates.CharacterConditions> blockedConditionStates;
         [SerializeField] protected List<CharacterStates.MovementStates> blockedMovementStates;
         [SerializeField] protected bool renderGUI = false;
+
+        [SerializeField] protected List<AudioClip> SfxStart = new List<AudioClip>();
+
+        protected void PlayStartSfx()
+        {
+            if (SfxStart.Count == 0) return;
+            var chosen = Mathf.FloorToInt(Random.Range(0, SfxStart.Count - 1));
+            var clip = SfxStart[chosen];
+            if (clip != null)
+            {
+                AudioManager.Instance.PlaySfx(clip);   
+            }
+        }
+        
+        protected void PlayStartSfxRandomPitch(float min, float max)
+        {
+            if (SfxStart.Count == 0) return;
+            var chosen = Mathf.FloorToInt(Random.Range(0, SfxStart.Count - 1));
+            var pitch = Random.Range(min, max);
+            var clip = SfxStart[chosen];
+            if (clip != null)
+            {
+                AudioManager.Instance.PlaySfx(clip, pitch);   
+            }
+        }
         
         public bool IsUnlocked = true;
         public bool IsInitialized => _isInitialized;
