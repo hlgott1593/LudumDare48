@@ -30,6 +30,11 @@ namespace LD48
             SceneLoadingManager.LoadScene(sceneName);
         }
         
+
+        public void ExitGame()
+        {
+            Application.Quit();
+        }
         
 
         public void PlayStartSfx()

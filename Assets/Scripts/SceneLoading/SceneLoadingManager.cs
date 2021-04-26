@@ -21,11 +21,15 @@ namespace LD48
         protected AsyncOperation _asyncOperation;
         protected float _progressFillTarget=0f;
         
+        // Story Text
+        protected static string _displayText = "";
+        public bool continueClicked = false;
         
         
-        public static void LoadScene(string sceneToLoad)
+        public static void LoadScene(string sceneToLoad, string displayText = "")
         {
-            _sceneToLoad = sceneToLoad;	
+            _sceneToLoad = sceneToLoad;
+            _displayText = displayText;
             SceneManager.LoadScene(LoadingScreenSceneName);
         }
         protected virtual void Start()
@@ -82,6 +86,10 @@ namespace LD48
 
             var tween2 = DOTween.Sequence().Append(DOTween.To(() => Fade.alpha, (v) => Fade.alpha = v, 1f, ExitFadeDuration)).SetEase(Ease.InCirc);
             yield return new WaitForSeconds(ExitFadeDuration);
+
+
+            // Wait until click
+            yield return new WaitUntil(() => _displayText != "" && continueClicked);
 
             // we switch to the new scene
             _asyncOperation.allowSceneActivation = true;
