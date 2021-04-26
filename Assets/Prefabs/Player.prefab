@@ -154,6 +154,8 @@ MonoBehaviour:
   blockedConditionStates: 02000000
   blockedMovementStates: 
   renderGUI: 0
+  SfxStart:
+  - {fileID: 8300000, guid: f9cd6dc95e81c5f4783b41ebaf54912e, type: 3}
   IsUnlocked: 1
   dashDuration: 0.25
   dashVelocity: 100
@@ -165,6 +167,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 3018292956233855717}
     m_Modifications:
     - target: {fileID: 5794662903698514181, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: SfxStart.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794662903698514181, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: SfxStart.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 70a45dbee5f363b4c9fb1ec23361cec1, type: 3}
+    - target: {fileID: 5794662903698514181, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: blockedConditionStates.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -173,6 +183,14 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6975499140764496049, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: SfxStart.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496049, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: SfxStart.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 49d46468a1a665e48a1889bcfadb34c1, type: 3}
+    - target: {fileID: 6975499140764496049, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: blockedConditionStates.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -180,6 +198,14 @@ PrefabInstance:
       propertyPath: blockedConditionStates.Array.data[0]
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496050, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: SfxStart.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496050, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: SfxStart.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 49d46468a1a665e48a1889bcfadb34c1, type: 3}
     - target: {fileID: 6975499140764496050, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: blockedConditionStates.Array.size
       value: 1
@@ -208,6 +234,14 @@ PrefabInstance:
       propertyPath: _corporealLayer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496052, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: RespawnSfx.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975499140764496052, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
+      propertyPath: RespawnSfx.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: fcd8b216dbb4f2042bc8e50b3489153a, type: 3}
     - target: {fileID: 6975499140764496052, guid: 3ab3e277efe251c4d9719c949c59a3c8, type: 3}
       propertyPath: ghostCollisionLayer.m_Bits
       value: 1025

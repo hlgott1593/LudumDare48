@@ -17,6 +17,8 @@ namespace LD48 {
         }
 
         private void OnDisable() {
+            Character.GhostFormEntered -= EnableVolume;
+            Character.CorporealFormEntered -= DisableVolume;
             _sequence?.Kill();
         }
 

@@ -408,6 +408,18 @@ MonoBehaviour:
           m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1652269764}
+        m_TargetAssemblyTypeName: LD48.SceneLoadingTest, Assembly-CSharp
+        m_MethodName: PlayStartSfx
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1066708116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,7 +626,7 @@ GameObject:
   - component: {fileID: 1652269763}
   - component: {fileID: 1652269764}
   m_Layer: 0
-  m_Name: Tester
+  m_Name: SceneLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -648,6 +660,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fade: {fileID: 995118056}
   ExitFadeDuration: 0.2
+  SfxStart:
+  - {fileID: 8300000, guid: 74921f7ee58ad8e4b91ae9d80742516e, type: 3}
 --- !u!1 &1716338427
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,5 +926,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8101348832023468931, guid: 51666cfaac5e514448df0a19033bf643, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f5e9ef567b6c21d4c9191b8d172c6cbd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51666cfaac5e514448df0a19033bf643, type: 3}
