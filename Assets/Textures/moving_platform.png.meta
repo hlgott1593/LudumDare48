@@ -5,6 +5,18 @@ TextureImporter:
   - first:
       213: -713919504470898100
     second: moving_platform_0
+  - first:
+      213: 8100756638983203297
+    second: moving_platform_1
+  - first:
+      213: 1677322179298697668
+    second: moving_platform_2
+  - first:
+      213: 2755775504408081495
+    second: moving_platform_3
+  - first:
+      213: -7619374806091394202
+    second: moving_platform_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -46,7 +58,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -110,18 +122,102 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 32
+        y: 128
         width: 48
-        height: 48
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 16, y: 16, z: 16, w: 16}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: c4a0ac14ef5a716f0800000000000000
       internalID: -713919504470898100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moving_platform_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 64
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e92b765e3bab6070800000000000000
+      internalID: 8100756638983203297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moving_platform_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 80
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c1abfe92ab074710800000000000000
+      internalID: 1677322179298697668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moving_platform_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 96
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75477f4783b7e3620800000000000000
+      internalID: 2755775504408081495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moving_platform_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 112
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6639c58abfa824690800000000000000
+      internalID: -7619374806091394202
       vertices: []
       indices: 
       edges: []
