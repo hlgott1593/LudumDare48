@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 namespace LD48 {
     [RequireComponent(typeof(Collider2D))]
+    
     public class OnTriggerEnter : MonoBehaviour {
         [SerializeField] private UnityEvent _onTriggerEnter;
 
