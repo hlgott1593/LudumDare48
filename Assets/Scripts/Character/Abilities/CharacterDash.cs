@@ -85,7 +85,11 @@ namespace LD48
         public override void LateProcessAbility()
         {
             _lastFramePressed = _inputManager.Special;
-            if (_controller.Grounded) _canDash = true;
+            if (_controller.Grounded)
+            {
+                _dashing = false;
+                _canDash = true;
+            }
         }
         
         protected bool PressedThisFrame()
