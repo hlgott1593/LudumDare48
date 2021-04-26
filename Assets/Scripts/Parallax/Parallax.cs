@@ -16,6 +16,8 @@ namespace LD48
         public Transform player;
         private Vector3 previousPlayerPos;
 
+        [SerializeField] private float _manualBounds;
+
         void Awake ()
         {
             player = Camera.main.transform;
@@ -28,7 +30,7 @@ namespace LD48
             for (int i = 0; i < screenCount; i++)
             {
                 var screen = Instantiate(prefab, transform);
-                var width = screen.GetComponent<SpriteRenderer>().bounds.size.x;
+                var width = _manualBounds > 0 ? _manualBounds : screen.GetComponent<SpriteRenderer>().bounds.size.x;
                 screen.transform.localPosition = new Vector3((i + offsetX) * width, screen.transform.localPosition.y, screen.transform.localPosition.z);
                 screens.Add(screen.transform);
             }
