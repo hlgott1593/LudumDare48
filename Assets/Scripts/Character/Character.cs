@@ -4,10 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using LD48.Audio;
 using LD48.Health;
-using SuperTiled2Unity.Editor;
 using UnityEngine;
-using UnityEngine.UI;
-using Random = Unity.Mathematics.Random;
 
 namespace LD48
 {
@@ -48,7 +45,6 @@ namespace LD48
         protected void Awake() => Initialize();
 
         private void Start() {
-            Application.quitting += CorporealFormEntered;
             CorporealFormEntered();
             _controller.groundLayerMask = corporealCollisionlayer;
 
@@ -189,7 +185,7 @@ namespace LD48
                 gameObject.AssignChildLayers();
             }
         }
-
+        
         protected void UpdateAnimator()
         {
             if (MovementState == CharacterStates.MovementStates.Dashing)
