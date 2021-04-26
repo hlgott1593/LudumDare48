@@ -806,6 +806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fade: {fileID: 995118056}
   ExitFadeDuration: 0.2
+  LoreText: The forest is your home
   SfxStart:
   - {fileID: 8300000, guid: 74921f7ee58ad8e4b91ae9d80742516e, type: 3}
 --- !u!1 &1716338427

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,13 +10,15 @@ namespace LD48
 {
     public class SceneLoadingManager : MonoBehaviour
     {
+        public TMP_Text LoreTextElement;
         public float StartFadeDuration=0.2f;
         public float ProgressBarSpeed=2f;
         public float ExitFadeDuration=0.2f;
         public float LoadCompleteDelay=0.5f;
         public Image _progressBarImage;
         public CanvasGroup Fade;
-        
+
+        public static string LoreText = "";
         public static string LoadingScreenSceneName = "LoadingScreen";
         protected static string _sceneToLoad = "";
         protected AsyncOperation _asyncOperation;
@@ -36,7 +39,8 @@ namespace LD48
             // _tween = new MMTweenType(MMTween.MMTweenCurve.EaseOutCubic);
             // _progressBarImage = LoadingProgressBar.GetComponent<Image>();
             // _loadingTextValue =LoadingText.text;
-
+            LoreTextElement.text = LoreText;
+            LoreText = "";
             _progressBarImage.fillAmount = 0;
             
             if (!string.IsNullOrEmpty(_sceneToLoad))

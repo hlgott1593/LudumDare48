@@ -12,6 +12,8 @@ namespace LD48
     {
         public CanvasGroup Fade;
         public float ExitFadeDuration=0.2f;
+
+        [SerializeField] protected string LoreText = "";
         [SerializeField] protected List<AudioClip> SfxStart = new List<AudioClip>();
         private bool _loading = false;
         
@@ -27,6 +29,7 @@ namespace LD48
         {
             var tween2 = DOTween.Sequence().Append(DOTween.To(() => Fade.alpha, (v) => Fade.alpha = v, 1f, ExitFadeDuration)).SetEase(Ease.InCirc);
             yield return new WaitForSeconds(ExitFadeDuration);
+            SceneLoadingManager.LoreText = LoreText;
             SceneLoadingManager.LoadScene(sceneName);
         }
         
