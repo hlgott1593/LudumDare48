@@ -1613,14 +1613,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1183109494, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
-      propertyPath: SfxStart.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183109494, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
-      propertyPath: SfxStart.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: f9cd6dc95e81c5f4783b41ebaf54912e, type: 3}
     - target: {fileID: 3018292956233855706, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1669,26 +1661,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5411796943164310509, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
-      propertyPath: SfxStart.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5411796943164310509, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
-      propertyPath: SfxStart.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 49d46468a1a665e48a1889bcfadb34c1, type: 3}
-    - target: {fileID: 5411796943164310510, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
-      propertyPath: SfxStart
-      value: 
-      objectReference: {fileID: 8300000, guid: 49d46468a1a665e48a1889bcfadb34c1, type: 3}
-    - target: {fileID: 5411796943164310510, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
-      propertyPath: SfxStart.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5411796943164310510, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
-      propertyPath: SfxStart.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 49d46468a1a665e48a1889bcfadb34c1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e88705bf57af17846b56d7b16c18b536, type: 3}
 --- !u!1001 &6097604551414216532

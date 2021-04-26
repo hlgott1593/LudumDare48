@@ -31,6 +31,7 @@ namespace LD48
             {
                 _change = false;
                 _character.ChangeForm((_character.Form == CharacterStates.Form.Ghost) ? CharacterStates.Form.Shaman : CharacterStates.Form.Ghost);
+                PlayStartSfxRandomPitch(0.9f, 1.1f);
             } 
         }
         

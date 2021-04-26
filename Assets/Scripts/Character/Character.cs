@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
+using LD48.Audio;
 using LD48.Health;
 using SuperTiled2Unity.Editor;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = Unity.Mathematics.Random;
 
 namespace LD48
 {
@@ -36,6 +39,8 @@ namespace LD48
         [SerializeField] private int _spiritLayer;
         [SerializeField] private int _corporealLayer;
 
+        [SerializeField] protected List<AudioClip> RespawnSfx = new List<AudioClip>();
+        
         [SerializeField] private float RespawnDelay = 0.5f;
         
         private float checkpointHp = 3;
@@ -74,6 +79,7 @@ namespace LD48
             
             Condition = CharacterStates.CharacterConditions.Dead;
             DOTween.Sequence().Append(DOTweenModuleSprite.DOFade(Model, 0, 0));
+            PlayRespawnSfx();
             transform.position = position;
             _controller.ZeroVelocities();
             DOTween.Sequence().Append(DOTweenModuleSprite.DOFade(Model, 1, RespawnDelay));
@@ -239,6 +245,17 @@ namespace LD48
             }
             
             
+        }
+        
+        public void PlayRespawnSfx()
+        {
+            if (RespawnSfx.Count == 0) return;
+            var chosen = Mathf.FloorToInt(UnityEngine.Random.Range(0, RespawnSfx.Count - 1));
+            var clip = RespawnSfx[chosen];
+            if (clip != null)
+            {
+                AudioManager.Instance.PlaySfx(clip);   
+            }
         }
 
         void OnGUI()
