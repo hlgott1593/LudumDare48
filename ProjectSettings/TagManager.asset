@@ -56,6 +56,12 @@ TagManager:
   - name: background1
     uniqueID: 937743993
     locked: 0
+  - name: cave_bg2
+    uniqueID: 70777805
+    locked: 0
+  - name: cave_bg
+    uniqueID: 2856016471
+    locked: 0
   - name: ground_transition
     uniqueID: 2676180119
     locked: 0

@@ -16,10 +16,9 @@ namespace LD48
         public Transform player;
         private Vector3 previousPlayerPos;
 
-
         void Awake ()
         {
-            player = GameObject.Find("Shaman").transform;
+            player = Camera.main.transform;
         }
 
         // Start is called before the first frame update
@@ -30,7 +29,7 @@ namespace LD48
             {
                 var screen = Instantiate(prefab, transform);
                 var width = screen.GetComponent<SpriteRenderer>().bounds.size.x;
-                screen.transform.position = new Vector3((i + offsetX) * width, screen.transform.position.y, screen.transform.position.z);
+                screen.transform.localPosition = new Vector3((i + offsetX) * width, screen.transform.localPosition.y, screen.transform.localPosition.z);
                 screens.Add(screen.transform);
             }
 
@@ -41,9 +40,9 @@ namespace LD48
         void Update()
         {
             float parallax = (previousPlayerPos.x - player.position.x) * parallaxScale;
-            float backgroundTargetPosX = transform.position.x + parallax;
-            Vector3 backgroundTargetPos = new Vector3(backgroundTargetPosX, transform.position.y, transform.position.z);
-            transform.position = Vector3.Lerp(transform.position, backgroundTargetPos, smoothing * Time.deltaTime);
+            float backgroundTargetPosX = transform.localPosition.x + parallax;
+            Vector3 backgroundTargetPos = new Vector3(backgroundTargetPosX, transform.localPosition.y, transform.localPosition.z);
+            transform.localPosition = Vector3.Lerp(transform.localPosition, backgroundTargetPos, smoothing * Time.deltaTime);
             previousPlayerPos = player.position;
         }
     }
