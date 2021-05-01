@@ -30,7 +30,11 @@ namespace LD48
 
         public override void ProcessAbility()
         {
-            if (!CheckIsDashing()) return;
+            if (!CheckIsDashing()) {
+                _dashing = false;
+                _animator.SetBool("Dashing", _dashing);
+                return;
+            }
             
             
             if (Time.time - _dashStartAt >= dashDuration || _controller.Ceiling || _controller.Grounded)
@@ -72,8 +76,7 @@ namespace LD48
             _animator.SetBool("Dashing", _dashing);
         }
 
-        private bool CheckIsDashing()
-        {
+        private bool CheckIsDashing() {
             return _character.MovementState == CharacterStates.MovementStates.Dashing;
         }
 
