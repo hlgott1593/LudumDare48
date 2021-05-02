@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2692208448844587445}
   - component: {fileID: 2692208448844587451}
   m_Layer: 0
-  m_Name: PostProcessingVolumes
+  m_Name: SpiritWorldVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

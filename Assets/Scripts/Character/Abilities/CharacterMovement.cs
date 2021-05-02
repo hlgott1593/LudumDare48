@@ -81,6 +81,7 @@ namespace LD48 {
             if (_controller.Grounded && (_character.MovementState == CharacterStates.MovementStates.Falling)) {
                 _character.ChangeMovementState(CharacterStates.MovementStates.Idle);
                 if (_runDustInstance) Destroy(_runDustInstance);
+                MakeJuice(_fallingDust, true);
             }
 
             //
@@ -104,6 +105,7 @@ namespace LD48 {
         }
 
         private GameObject _runDustInstance;
+        [SerializeField] private GameObject _fallingDust;
 
         private void MakeContinuousRunDust() {
             _runDustInstance = Instantiate(_runDust, _dustSpawnPos.position, Quaternion.identity);
@@ -114,7 +116,6 @@ namespace LD48 {
             _runDustInstance.transform.SetParent(gameObject.transform);
         }
 
-        [SerializeField] private SortingLayer layer;
         private void MakeJuice(GameObject _dust, bool stop = false) {
             if (_dust == null || _dustSpawnPos == null) return;
 
