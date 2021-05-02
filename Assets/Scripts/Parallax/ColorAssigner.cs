@@ -15,4 +15,4 @@ namespace LD48 {
             _light.color = _randomColor ? _colors[Random.Range(0, _colors.Count)] : _colors[0];
         }
     }
-}
+}   
