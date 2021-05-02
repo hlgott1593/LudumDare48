@@ -460,7 +460,7 @@ MonoBehaviour:
   IsUnlocked: 1
   jumpDuration: 0.2
   jumpVelocity: 20
-  _dust: {fileID: 0}
+  _dust: {fileID: 5068411142006221160, guid: 009f7d56c4a875e44975d13b59e3d483, type: 3}
   _dustSpawnPos: {fileID: 8655684955468347586}
   extraJumpCount: 1
   ignoreYVelocity: 1

@@ -159,6 +159,8 @@ MonoBehaviour:
   IsUnlocked: 1
   dashDuration: 0.25
   dashVelocity: 100
+  _dust: {fileID: 5068411142006221160, guid: 347eec1e9aa0b574aa0fa6cb5f4c1b8e, type: 3}
+  _dustSpawnPos: {fileID: 5411796943164310501}
 --- !u!1001 &3159102684281566047
 PrefabInstance:
   m_ObjectHideFlags: 0

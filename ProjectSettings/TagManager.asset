@@ -19,7 +19,7 @@ TagManager:
   - CorporealCollides
   - Triggers
   - Spikes
-  - 
+  - Light
   - 
   - 
   - 
@@ -58,6 +58,9 @@ TagManager:
     locked: 0
   - name: ground_transition
     uniqueID: 2676180119
+    locked: 0
+  - name: SunbeamDaddy
+    uniqueID: 2384533085
     locked: 0
   - name: cave_bg2
     uniqueID: 70777805

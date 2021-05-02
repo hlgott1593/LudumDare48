@@ -114,12 +114,13 @@ namespace LD48 {
             _runDustInstance.transform.SetParent(gameObject.transform);
         }
 
+        [SerializeField] private SortingLayer layer;
         private void MakeJuice(GameObject _dust, bool stop = false) {
             if (_dust == null || _dustSpawnPos == null) return;
 
             var dust = Instantiate(_dust, _dustSpawnPos.position, Quaternion.identity);
 
-
+            // dust.layer = transpa
             var stopPos = !_character.Model.flipX;
             if (stop ? stopPos : _movement.x < 0) {
                 for (int i = 0; i < dust.transform.childCount; i++) {

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2993559323782430443}
   - component: {fileID: 4363940761697280648}
   - component: {fileID: 1925979782149630642}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: cave_light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

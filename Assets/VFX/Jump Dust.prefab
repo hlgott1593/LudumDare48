@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2869028813668959572}
   - component: {fileID: 277724763843804838}
   - component: {fileID: 2880214958737999472}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: thic dusties l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4875,7 +4875,7 @@ GameObject:
   - component: {fileID: 2068824986371799370}
   - component: {fileID: 1938409442874207582}
   - component: {fileID: 5216483568120240488}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Jump Dust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9755,7 +9755,7 @@ GameObject:
   - component: {fileID: 446569936299847230}
   - component: {fileID: 7886066035911341759}
   - component: {fileID: 1955584895833660382}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: dusties r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14618,7 +14618,7 @@ GameObject:
   - component: {fileID: 2887707726709358411}
   - component: {fileID: 4249831970786534301}
   - component: {fileID: 2045145460360390421}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: thic dusties r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19481,7 +19481,7 @@ GameObject:
   - component: {fileID: 6516153634155313089}
   - component: {fileID: 5651460146375169679}
   - component: {fileID: 6666990747622133805}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: dusties l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
