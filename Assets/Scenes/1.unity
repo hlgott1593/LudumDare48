@@ -1373,7 +1373,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429996499}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0320774, w: 0.99948543}
   m_LocalPosition: {x: 254.73, y: -17.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1407,8 +1407,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1.76
-  m_PointLightOuterRadius: 5.72
+  m_PointLightInnerRadius: 3.6656182
+  m_PointLightOuterRadius: 8.595603
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 11
@@ -2758,11 +2758,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2845924474691921753, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 53.3087
+      value: 36.33
       objectReference: {fileID: 0}
     - target: {fileID: 2845924474691921758, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
       propertyPath: m_Size.x
-      value: 133.38268
+      value: 167.34012
       objectReference: {fileID: 0}
     - target: {fileID: 3518448363072852142, guid: 81360206b8ac82a4eb85ea347f6141dc, type: 3}
       propertyPath: m_Size.x
@@ -2895,7 +2895,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123270750}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.79632556, w: 0.60486823}
   m_LocalPosition: {x: 248.61, y: -10.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2927,10 +2927,10 @@ MonoBehaviour:
   m_AlphaBlendOnOverlap: 1
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0
-  m_PointLightInnerAngle: 360
+  m_PointLightInnerAngle: 125.38
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 4.96
-  m_PointLightOuterRadius: 11.31
+  m_PointLightInnerRadius: 8.301532
+  m_PointLightOuterRadius: 12.567495
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 11
