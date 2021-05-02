@@ -6,47 +6,41 @@ namespace LD48
 {
     public class SlowMove : MonoBehaviour
     {
-        public GameObject prefab;
+        public GameObject screen;
 
         public List<Transform> screens;
-        public int screenCount = 5;
         public float speed;
         public float smoothing = 1f;
+        private Vector3 startPos;
 
         public Bounds bounds;
-
-        void Awake ()
-        {
-           
-        }
 
         // Start is called before the first frame update
         void Start()
         {
-            int offsetX = -screenCount / 2;
-            for (int i = 0; i < screenCount; i++)
-            {
-                var screen = Instantiate(prefab, transform);
-                bounds = screen.GetComponent<SpriteRenderer>().bounds;
-                var width = bounds.size.x;
-                screen.transform.position = new Vector3((i + offsetX) * width, screen.transform.position.y, screen.transform.position.z);
-                screens.Add(screen.transform);
-            }
+            startPos = screen.transform.position;
+            screens.Add(screen.transform);
+            bounds = screen.GetComponent<SpriteRenderer>().bounds;
+            var width = bounds.size.x;
+            // Create second screen
+            var screen2 = Instantiate(screen, transform);
+            screen2.transform.position = new Vector3( screen.transform.position.x - width, screen.transform.position.y, screen.transform.position.z);
+            screens.Add(screen2.transform);
         }
 
         // Update is called once per frame
         void Update()
         {
-            foreach (var screen in screens)
+            foreach (var scrn in screens)
             {
-                screen.transform.localPosition = Vector3.Lerp(
-                    screen.transform.localPosition,
-                    screen.transform.localPosition + Vector3.right * speed,
+                scrn.transform.localPosition = Vector3.Lerp(
+                    scrn.transform.localPosition,
+                    scrn.transform.localPosition + Vector3.right * speed,
                     smoothing * Time.deltaTime
                 );
-                if (screen.transform.position.x > bounds.size.x * (screenCount - screenCount / 2))
+                if (scrn.transform.position.x > startPos.x + bounds.size.x)
                 {
-                    screen.transform.position += Vector3.left * bounds.size.x * screenCount;
+                    scrn.transform.position += Vector3.left * bounds.size.x * 2;
                 }
             }
         }
