@@ -49,6 +49,22 @@ public class @CharacterActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Debug_IncreaseTime"",
+                    ""type"": ""Button"",
+                    ""id"": ""53898943-3c04-474c-98a5-c89bb0a30d75"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Debug_DecreaseTime"",
+                    ""type"": ""Button"",
+                    ""id"": ""36e1e6b1-9088-411b-8827-3938b71152d9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -183,6 +199,28 @@ public class @CharacterActions : IInputActionCollection, IDisposable
                     ""action"": ""Special"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""665c4571-cc43-42c6-975c-9a890dfc4b8c"",
+                    ""path"": ""<Keyboard>/equals"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Debug_IncreaseTime"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""28dd0bfc-6e95-4bdb-a948-e0c13ff36cb7"",
+                    ""path"": ""<Keyboard>/minus"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Debug_DecreaseTime"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -218,6 +256,8 @@ public class @CharacterActions : IInputActionCollection, IDisposable
         m_CharacterControls_Jump = m_CharacterControls.FindAction("Jump", throwIfNotFound: true);
         m_CharacterControls_ChangeForm = m_CharacterControls.FindAction("ChangeForm", throwIfNotFound: true);
         m_CharacterControls_Special = m_CharacterControls.FindAction("Special", throwIfNotFound: true);
+        m_CharacterControls_Debug_IncreaseTime = m_CharacterControls.FindAction("Debug_IncreaseTime", throwIfNotFound: true);
+        m_CharacterControls_Debug_DecreaseTime = m_CharacterControls.FindAction("Debug_DecreaseTime", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -271,6 +311,8 @@ public class @CharacterActions : IInputActionCollection, IDisposable
     private readonly InputAction m_CharacterControls_Jump;
     private readonly InputAction m_CharacterControls_ChangeForm;
     private readonly InputAction m_CharacterControls_Special;
+    private readonly InputAction m_CharacterControls_Debug_IncreaseTime;
+    private readonly InputAction m_CharacterControls_Debug_DecreaseTime;
     public struct CharacterControlsActions
     {
         private @CharacterActions m_Wrapper;
@@ -279,6 +321,8 @@ public class @CharacterActions : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_CharacterControls_Jump;
         public InputAction @ChangeForm => m_Wrapper.m_CharacterControls_ChangeForm;
         public InputAction @Special => m_Wrapper.m_CharacterControls_Special;
+        public InputAction @Debug_IncreaseTime => m_Wrapper.m_CharacterControls_Debug_IncreaseTime;
+        public InputAction @Debug_DecreaseTime => m_Wrapper.m_CharacterControls_Debug_DecreaseTime;
         public InputActionMap Get() { return m_Wrapper.m_CharacterControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -300,6 +344,12 @@ public class @CharacterActions : IInputActionCollection, IDisposable
                 @Special.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnSpecial;
                 @Special.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnSpecial;
                 @Special.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnSpecial;
+                @Debug_IncreaseTime.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnDebug_IncreaseTime;
+                @Debug_IncreaseTime.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnDebug_IncreaseTime;
+                @Debug_IncreaseTime.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnDebug_IncreaseTime;
+                @Debug_DecreaseTime.started -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnDebug_DecreaseTime;
+                @Debug_DecreaseTime.performed -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnDebug_DecreaseTime;
+                @Debug_DecreaseTime.canceled -= m_Wrapper.m_CharacterControlsActionsCallbackInterface.OnDebug_DecreaseTime;
             }
             m_Wrapper.m_CharacterControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -316,6 +366,12 @@ public class @CharacterActions : IInputActionCollection, IDisposable
                 @Special.started += instance.OnSpecial;
                 @Special.performed += instance.OnSpecial;
                 @Special.canceled += instance.OnSpecial;
+                @Debug_IncreaseTime.started += instance.OnDebug_IncreaseTime;
+                @Debug_IncreaseTime.performed += instance.OnDebug_IncreaseTime;
+                @Debug_IncreaseTime.canceled += instance.OnDebug_IncreaseTime;
+                @Debug_DecreaseTime.started += instance.OnDebug_DecreaseTime;
+                @Debug_DecreaseTime.performed += instance.OnDebug_DecreaseTime;
+                @Debug_DecreaseTime.canceled += instance.OnDebug_DecreaseTime;
             }
         }
     }
@@ -344,5 +400,7 @@ public class @CharacterActions : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnChangeForm(InputAction.CallbackContext context);
         void OnSpecial(InputAction.CallbackContext context);
+        void OnDebug_IncreaseTime(InputAction.CallbackContext context);
+        void OnDebug_DecreaseTime(InputAction.CallbackContext context);
     }
 }

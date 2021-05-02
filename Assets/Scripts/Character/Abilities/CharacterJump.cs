@@ -9,8 +9,10 @@ namespace LD48
 
         protected bool _jumping = false;
         protected bool _lastFrameJump = false;
-        protected float _jumpStartedAt = 0f;    
-        
+        protected float _jumpStartedAt = 0f;
+        [SerializeField] private GameObject _dust;
+        [SerializeField] private Transform _dustSpawnPos;
+
         public override void HandleInput()
         {
             base.HandleInput();
@@ -69,6 +71,9 @@ namespace LD48
             _jumping = true;
             PlayStartSfxRandomPitch(0.9f, 1.1f);
             SetJumpState();
+            if (_dust == null || _dustSpawnPos == null) return;
+            var dust = Instantiate(_dust, _dustSpawnPos.position, Quaternion.identity);
+            if (_character.Model.flipX) dust.transform.localScale = new Vector3(-1, 1, 1);
         }
 
         private void JumpEnd()
