@@ -74,6 +74,7 @@ namespace LD48 {
                                       && (_character.MovementState == CharacterStates.MovementStates.Idle ||
                                           IsRunning())) {
                 _character.ChangeMovementState(CharacterStates.MovementStates.Falling);
+                _launchElevation = _character.transform.position.y;
                 if (_runDustInstance) Destroy(_runDustInstance);
             }
 
@@ -81,6 +82,9 @@ namespace LD48 {
             if (_controller.Grounded && (_character.MovementState == CharacterStates.MovementStates.Falling)) {
                 _character.ChangeMovementState(CharacterStates.MovementStates.Idle);
                 if (_runDustInstance) Destroy(_runDustInstance);
+                _landingElevation = _character.transform.position.y;
+                _previousDrop = Time.time;
+                if (Mathf.Abs(_launchElevation - _landingElevation) < _dropHeightThreshold) return;
                 MakeJuice(_fallingDust, true);
             }
 
@@ -88,6 +92,8 @@ namespace LD48 {
             if (_controller.Grounded && (Mathf.Abs(_movement.x) > idleThreshold) &&
                 (_character.MovementState == CharacterStates.MovementStates.Idle)) {
                 _character.ChangeMovementState(CharacterStates.MovementStates.Running);
+
+                if (Time.time - _previousDrop < 1f && Mathf.Abs(_launchElevation - _landingElevation) < _dropHeightThreshold) return;
                 MakeJuice(_startDust);
                 if (!_runDustInstance) MakeContinuousRunDust();
             }
@@ -106,6 +112,10 @@ namespace LD48 {
 
         private GameObject _runDustInstance;
         [SerializeField] private GameObject _fallingDust;
+        private float _landingElevation;
+        private float _launchElevation;
+        [SerializeField]private float _dropHeightThreshold;
+        private float _previousDrop;
 
         private void MakeContinuousRunDust() {
             _runDustInstance = Instantiate(_runDust, _dustSpawnPos.position, Quaternion.identity);
