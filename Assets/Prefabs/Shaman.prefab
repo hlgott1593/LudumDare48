@@ -421,6 +421,7 @@ MonoBehaviour:
   _runDust: {fileID: 5068411142006221160, guid: 39cf24eb162aab44d876a07d2eb8efe4, type: 3}
   _dustSpawnPos: {fileID: 6975499140106647707}
   _fallingDust: {fileID: 5068411142006221160, guid: 9bc17cce3a8e764478ad34b158059d94, type: 3}
+  _dropHeightThreshold: 1.4
 --- !u!114 &6975499140764496049
 MonoBehaviour:
   m_ObjectHideFlags: 0
